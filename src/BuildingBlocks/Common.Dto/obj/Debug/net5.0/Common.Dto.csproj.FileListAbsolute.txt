@@ -1,0 +1,12 @@
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Dto\bin\Debug\net5.0\Common.Dto.deps.json
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Dto\bin\Debug\net5.0\Common.Dto.dll
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Dto\bin\Debug\net5.0\ref\Common.Dto.dll
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Dto\bin\Debug\net5.0\Common.Dto.pdb
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Dto\obj\Debug\net5.0\Common.Dto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Dto\obj\Debug\net5.0\Common.Dto.AssemblyInfoInputs.cache
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Dto\obj\Debug\net5.0\Common.Dto.AssemblyInfo.cs
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Dto\obj\Debug\net5.0\Common.Dto.csproj.CoreCompileInputs.cache
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Dto\obj\Debug\net5.0\Common.Dto.dll
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Dto\obj\Debug\net5.0\ref\Common.Dto.dll
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Dto\obj\Debug\net5.0\Common.Dto.pdb
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Dto\obj\Debug\net5.0\Common.Dto.csproj.AssemblyReference.cache

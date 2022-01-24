@@ -1,0 +1,12 @@
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.Domain\bin\Debug\net5.0\Contact.Domain.deps.json
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.Domain\bin\Debug\net5.0\Contact.Domain.dll
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.Domain\bin\Debug\net5.0\ref\Contact.Domain.dll
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.Domain\bin\Debug\net5.0\Contact.Domain.pdb
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.Domain\obj\Debug\net5.0\Contact.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.Domain\obj\Debug\net5.0\Contact.Domain.AssemblyInfoInputs.cache
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.Domain\obj\Debug\net5.0\Contact.Domain.AssemblyInfo.cs
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.Domain\obj\Debug\net5.0\Contact.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.Domain\obj\Debug\net5.0\Contact.Domain.dll
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.Domain\obj\Debug\net5.0\ref\Contact.Domain.dll
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.Domain\obj\Debug\net5.0\Contact.Domain.pdb
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.Domain\obj\Debug\net5.0\Contact.Domain.csproj.AssemblyReference.cache
