@@ -20,7 +20,7 @@ namespace Contact.Infrastructure.Configuration.PersonConfiguration
             builder.Property(x => x.InfoType).HasColumnName("info_type").IsRequired();
             builder.Property(x => x.InfoDetail).HasColumnName("info_detail").HasMaxLength(500).IsRequired();
             
-            builder.HasOne<Person>(x => x.Person).WithMany(x => x.PersonContactInfo).HasForeignKey(x => x.PersonId);
+            builder.HasOne<Person>(x => x.Person).WithMany(x => x.PersonContactInfo).HasForeignKey(x => x.PersonId).OnDelete(DeleteBehavior.Cascade);
 
             builder.HasIndex(x => x.Id).IsUnique();
             builder.HasIndex(x => x.PersonId).IsUnique(false);

@@ -4,15 +4,12 @@ using Contact.Application.Contracts.Persistence;
 using Contact.Domain.Entities;
 using MediatR;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Contact.Application.Features.Contacts.Commands.InsertContact
 {
-    public class InsertContactCommandHandler : IRequestHandler<InsertContactCommand, InsertContactDto>
+    public class InsertContactCommandHandler : IRequestHandler<InsertContactCommand, InsertContactResponseDto>
     {
         private readonly IMapper _mapper;
         private readonly IContactRepository _contactRepository;
@@ -23,11 +20,11 @@ namespace Contact.Application.Features.Contacts.Commands.InsertContact
             _contactRepository = contactRepository ?? throw new ArgumentNullException(nameof(contactRepository));
         }
 
-        public async Task<InsertContactDto> Handle(InsertContactCommand request, CancellationToken cancellationToken)
+        public async Task<InsertContactResponseDto> Handle(InsertContactCommand request, CancellationToken cancellationToken)
         {
-            var personEntity = _mapper.Map<Person>(request);
-            var newPerson = await _contactRepository.AddAsync(personEntity);
-            return _mapper.Map<InsertContactDto>(newPerson);
+            var personEntity = _mapper.Map<Person>(request.InsertContactRequestDto);
+            var newPerson = await _contactRepository.InsertAsync(personEntity);
+            return _mapper.Map<InsertContactResponseDto>(newPerson);
         }
     }
 }

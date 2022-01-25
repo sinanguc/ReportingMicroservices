@@ -73,7 +73,12 @@ namespace Contact.Infrastructure.Repositories
             return await _dbContext.Set<TEntity>().FindAsync(id);
         }
 
-        public async Task<TEntity> AddAsync(TEntity entity)
+        public virtual async Task<TEntity> GetByIdAsync(Guid id)
+        {
+            return await _dbContext.Set<TEntity>().FindAsync(id);
+        }
+
+        public async Task<TEntity> InsertAsync(TEntity entity)
         {
             _dbContext.Set<TEntity>().Add(entity);
             await _dbContext.SaveChangesAsync();

@@ -35,6 +35,7 @@
         "dependencies": {
           "AspNetCore.HealthChecks.NpgSql": "5.0.2",
           "AspNetCore.HealthChecks.UI.Client": "5.0.1",
+          "Common.Messages": "1.0.0",
           "Contact.Application": "1.0.0",
           "Contact.Domain": "1.0.0",
           "Contact.Infrastructure": "1.0.0",
@@ -1984,6 +1985,14 @@
           "Common.Helpers.dll": {}
         }
       },
+      "Common.Messages/1.0.0": {
+        "runtime": {
+          "Common.Messages.dll": {}
+        },
+        "compile": {
+          "Common.Messages.dll": {}
+        }
+      },
       "Contact.Application/1.0.0": {
         "dependencies": {
           "AutoMapper": "11.0.0",
@@ -2017,6 +2026,8 @@
         "dependencies": {
           "Contact.Application": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.13",
+          "Microsoft.EntityFrameworkCore.Proxies": "5.0.13",
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.13",
           "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
           "Npgsql": "5.0.11",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "5.0.10",
@@ -4599,6 +4610,11 @@
       "sha512": ""
     },
     "Common.Helpers/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Common.Messages/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

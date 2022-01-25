@@ -16,14 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Common.Helpers\Common.Helpers.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\Common.Dto\Common.Dto.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\Common.Helpers\Common.Helpers.csproj" />
     <ProjectReference Include="..\Contact.Domain\Contact.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Features\Contacts\Commands\DeleteContact\" />
-    <Folder Include="Features\Contacts\Commands\UpdateContact\" />
   </ItemGroup>
 
 </Project>

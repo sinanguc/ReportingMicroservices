@@ -1,5 +1,5 @@
-﻿using Common.Dto.Contact.Enums;
-using System;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Common.Dto.Contact
 {
@@ -8,15 +8,8 @@ namespace Common.Dto.Contact
         public Guid Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
+        public string Company { get; set; }
 
-        public ContactDetailDto ContactDetail { get; set; }
-    }
-
-    public class ContactDetailDto
-    {
-        public Guid Id { get; set; }
-        public Guid PersonId { get; set; }
-        public EnumContactInfoTypeDto InfoType { get; set; }
-        public string InfoDetail { get; set; }
+        public List<ContactDetailDto.WithId> PersonContactInfo { get; set; }
     }
 }

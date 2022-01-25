@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "RucYQ5r6jExwGwGfGfnsveZOXAy3Tyx7XselK88zQCxozZxTMoZkldzLf5FyC/3qG+znE2gwNr6C3jlo/OY/xA==",
+  "dgSpecHash": "P+UkGEuYe3NvIPF940aI4eqGJyo4AiQ8HVz2QSJTx784FGfRrxQx3q1ZPZTduE+f73bmbafT0ueUN3ATe2oPyg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Sinan\\source\\repos\\ReportingMicroservices\\src\\Services\\Contact\\Contact.Application\\Contact.Application.csproj",
   "expectedPackageFiles": [

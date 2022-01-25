@@ -4,8 +4,12 @@ using System.Collections.Generic;
 
 namespace Contact.Domain.Entities
 {
-    public class Person : BaseEntity<Guid>, IEntity
+    public partial class Person : BaseEntity<Guid>, IEntity
     {
+        public Person()
+        {
+            PersonContactInfo = new HashSet<PersonContactInfo>();
+        }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Company { get; set; }

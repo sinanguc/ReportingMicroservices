@@ -26,7 +26,7 @@ namespace Contact.Infrastructure.Repositories
             return contactList;
         }
 
-        public Task<IEnumerable<Person>> GetPersonByPersonIdAsync(Guid personId)
+        public Task<Person> GetPersonByPersonIdAsync(Guid personId)
         {
             throw new NotImplementedException();
         }
@@ -34,19 +34,25 @@ namespace Contact.Infrastructure.Repositories
         public async Task<PagedResult<ContactVm>> GetContactsAsync(GenericFilter filter)
         {
             var contactList = (from person in _dbContext.Persons
-                              join contact in _dbContext.PersonContactInfos on person.Id equals contact.PersonId into personContact
-                              from contact in personContact.DefaultIfEmpty()
-                              select new ContactVm
-                              {
-                                  Id = person.Id,
-                                  Name = person.Name,
-                                  Surname = person.Surname,
-                                  Company = person.Company
-                              });
-
+                               join contact in _dbContext.PersonContactInfos on person.Id equals contact.PersonId into personContact
+                               from contact in personContact.DefaultIfEmpty()
+                               select new ContactVm
+                               {
+                                   Id = person.Id,
+                                   Name = person.Name,
+                                   Surname = person.Surname,
+                                   Company = person.Company,
+                                   PersonContactInfo = person.PersonContactInfo.Select(d =>
+                                   new ContactDetailVm()
+                                   {
+                                       Id = d.Id,
+                                       InfoDetail = d.InfoDetail,
+                                       InfoType = d.InfoType,
+                                       PersonId = person.Id
+                                   }),
+                               });
 
             return await PaginationHelper.GetPagedAsync<ContactVm>(query: contactList, page: filter.CurrentPage, pageSize: filter.PageSize);
-
         }
 
     }

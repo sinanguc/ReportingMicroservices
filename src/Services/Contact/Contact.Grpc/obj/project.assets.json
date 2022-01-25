@@ -323,10 +323,10 @@
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Proxies.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational/5.0.10": {
+      "Microsoft.EntityFrameworkCore.Relational/5.0.13": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "5.0.10",
+          "Microsoft.EntityFrameworkCore": "5.0.13",
           "Microsoft.Extensions.Configuration.Abstractions": "5.0.0"
         },
         "compile": {
@@ -2429,12 +2429,23 @@
           "bin/placeholder/Common.Helpers.dll": {}
         }
       },
+      "Common.Messages/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Common.Messages.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.Messages.dll": {}
+        }
+      },
       "Contact.API/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "AspNetCore.HealthChecks.NpgSql": "5.0.2",
           "AspNetCore.HealthChecks.UI.Client": "5.0.1",
+          "Common.Messages": "1.0.0",
           "Contact.Application": "1.0.0",
           "Contact.Domain": "1.0.0",
           "Contact.Infrastructure": "1.0.0",
@@ -2496,6 +2507,8 @@
         "dependencies": {
           "Contact.Application": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.13",
+          "Microsoft.EntityFrameworkCore.Proxies": "5.0.13",
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.13",
           "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
           "Npgsql": "5.0.11",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "5.0.10",
@@ -3000,17 +3013,17 @@
         "microsoft.entityframeworkcore.proxies.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Relational/5.0.10": {
-      "sha512": "3l7GA+0y5E3kDOl85KRHhC0zXYA/CyQBQqDXvFGkqYzdPMRyWQkaQz2+yN4CN/SC+TVa48FPIAc2Wim8aWAliQ==",
+    "Microsoft.EntityFrameworkCore.Relational/5.0.13": {
+      "sha512": "Qs7N0HFemByf04PZHvn2ZFytveLZyZKCmuNcMus1f53uNarypvWifrOC7L/wYylm/j8vs3qcc7jgb/yox1sbtg==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.relational/5.0.10",
+      "path": "microsoft.entityframeworkcore.relational/5.0.13",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Relational.dll",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Relational.xml",
-        "microsoft.entityframeworkcore.relational.5.0.10.nupkg.sha512",
+        "microsoft.entityframeworkcore.relational.5.0.13.nupkg.sha512",
         "microsoft.entityframeworkcore.relational.nuspec"
       ]
     },
@@ -8018,8 +8031,13 @@
     },
     "Common.Helpers/1.0.0": {
       "type": "project",
-      "path": "../../../../Common.Helpers/Common.Helpers.csproj",
-      "msbuildProject": "../../../../Common.Helpers/Common.Helpers.csproj"
+      "path": "../../../BuildingBlocks/Common.Helpers/Common.Helpers.csproj",
+      "msbuildProject": "../../../BuildingBlocks/Common.Helpers/Common.Helpers.csproj"
+    },
+    "Common.Messages/1.0.0": {
+      "type": "project",
+      "path": "../../../BuildingBlocks/Common.Messages/Common.Messages.csproj",
+      "msbuildProject": "../../../BuildingBlocks/Common.Messages/Common.Messages.csproj"
     },
     "Contact.API/1.0.0": {
       "type": "project",

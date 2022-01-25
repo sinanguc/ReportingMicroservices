@@ -4,10 +4,13 @@ using System;
 
 namespace Contact.Application.Features.Contacts.Commands.InsertContact
 {
-    public class InsertContactCommand : IRequest<InsertContactDto>
+    public class InsertContactCommand : IRequest<InsertContactResponseDto>
     {
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public string Company { get; set; }
+        public InsertContactRequestDto InsertContactRequestDto { get; set; }
+
+        public InsertContactCommand(InsertContactRequestDto insertContactRequestDto)
+        {
+            InsertContactRequestDto = insertContactRequestDto ?? throw new ArgumentNullException(nameof(insertContactRequestDto));
+        }
     }
 }

@@ -20,7 +20,8 @@ namespace Contact.Application.Contracts.Persistence
                                        List<Expression<Func<TEntity, object>>> includes = null,
                                        bool disableTracking = true);
         Task<TEntity> GetByIdAsync(int id);
-        Task<TEntity> AddAsync(TEntity entity);
+        Task<TEntity> GetByIdAsync(Guid id);
+        Task<TEntity> InsertAsync(TEntity entity);
         Task UpdateAsync(TEntity entity);
         Task DeleteAsync(TEntity entity);
     }

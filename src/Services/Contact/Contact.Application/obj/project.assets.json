@@ -1826,8 +1826,8 @@
     },
     "Common.Helpers/1.0.0": {
       "type": "project",
-      "path": "../../../../Common.Helpers/Common.Helpers.csproj",
-      "msbuildProject": "../../../../Common.Helpers/Common.Helpers.csproj"
+      "path": "../../../BuildingBlocks/Common.Helpers/Common.Helpers.csproj",
+      "msbuildProject": "../../../BuildingBlocks/Common.Helpers/Common.Helpers.csproj"
     },
     "Contact.Domain/1.0.0": {
       "type": "project",
@@ -1877,9 +1877,6 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Sinan\\source\\repos\\ReportingMicroservices\\Common.Helpers\\Common.Helpers.csproj": {
-              "projectPath": "C:\\Users\\Sinan\\source\\repos\\ReportingMicroservices\\Common.Helpers\\Common.Helpers.csproj"
-            },
             "C:\\Users\\Sinan\\source\\repos\\ReportingMicroservices\\src\\BuildingBlocks\\Common.Dto\\Common.Dto.csproj": {
               "projectPath": "C:\\Users\\Sinan\\source\\repos\\ReportingMicroservices\\src\\BuildingBlocks\\Common.Dto\\Common.Dto.csproj"
             },

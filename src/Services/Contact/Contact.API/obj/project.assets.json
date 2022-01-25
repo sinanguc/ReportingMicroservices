@@ -2340,6 +2340,16 @@
           "bin/placeholder/Common.Helpers.dll": {}
         }
       },
+      "Common.Messages/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Common.Messages.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.Messages.dll": {}
+        }
+      },
       "Contact.Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -2379,6 +2389,8 @@
         "dependencies": {
           "Contact.Application": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.13",
+          "Microsoft.EntityFrameworkCore.Proxies": "5.0.13",
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.13",
           "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
           "Npgsql": "5.0.11",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "5.0.10",
@@ -7748,8 +7760,13 @@
     },
     "Common.Helpers/1.0.0": {
       "type": "project",
-      "path": "../../../../Common.Helpers/Common.Helpers.csproj",
-      "msbuildProject": "../../../../Common.Helpers/Common.Helpers.csproj"
+      "path": "../../../BuildingBlocks/Common.Helpers/Common.Helpers.csproj",
+      "msbuildProject": "../../../BuildingBlocks/Common.Helpers/Common.Helpers.csproj"
+    },
+    "Common.Messages/1.0.0": {
+      "type": "project",
+      "path": "../../../BuildingBlocks/Common.Messages/Common.Messages.csproj",
+      "msbuildProject": "../../../BuildingBlocks/Common.Messages/Common.Messages.csproj"
     },
     "Contact.Application/1.0.0": {
       "type": "project",
@@ -7771,6 +7788,7 @@
     "net5.0": [
       "AspNetCore.HealthChecks.NpgSql >= 5.0.2",
       "AspNetCore.HealthChecks.UI.Client >= 5.0.1",
+      "Common.Messages >= 1.0.0",
       "Contact.Application >= 1.0.0",
       "Contact.Domain >= 1.0.0",
       "Contact.Infrastructure >= 1.0.0",
@@ -7813,6 +7831,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "C:\\Users\\Sinan\\source\\repos\\ReportingMicroservices\\src\\BuildingBlocks\\Common.Messages\\Common.Messages.csproj": {
+              "projectPath": "C:\\Users\\Sinan\\source\\repos\\ReportingMicroservices\\src\\BuildingBlocks\\Common.Messages\\Common.Messages.csproj"
+            },
             "C:\\Users\\Sinan\\source\\repos\\ReportingMicroservices\\src\\Services\\Contact\\Contact.Application\\Contact.Application.csproj": {
               "projectPath": "C:\\Users\\Sinan\\source\\repos\\ReportingMicroservices\\src\\Services\\Contact\\Contact.Application\\Contact.Application.csproj"
             },

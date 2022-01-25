@@ -12,7 +12,7 @@ namespace Contact.Application.Contracts.Persistence
     {
         Task<IEnumerable<Person>> GetPersonAsync();
 
-        Task<IEnumerable<Person>> GetPersonByPersonIdAsync(Guid personId);
+        Task<Person> GetPersonByPersonIdAsync(Guid personId);
 
         Task<PagedResult<ContactVm>> GetContactsAsync(GenericFilter filter);
     }

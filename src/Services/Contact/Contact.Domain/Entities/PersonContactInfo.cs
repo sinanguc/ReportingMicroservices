@@ -4,7 +4,7 @@ using System;
 
 namespace Contact.Domain.Entities
 {
-    public class PersonContactInfo : BaseEntity<Guid>, IEntity
+    public partial class PersonContactInfo : BaseEntity<Guid>, IEntity
     {
         public Guid PersonId { get; set; }
         public ContactInfoType InfoType { get; set; }
