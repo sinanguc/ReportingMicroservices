@@ -9,3 +9,15 @@ C:\Users\Sinan\source\repos\ReportingMicroservices\Common.Helpers\obj\Debug\net5
 C:\Users\Sinan\source\repos\ReportingMicroservices\Common.Helpers\obj\Debug\net5.0\Common.Helpers.dll
 C:\Users\Sinan\source\repos\ReportingMicroservices\Common.Helpers\obj\Debug\net5.0\ref\Common.Helpers.dll
 C:\Users\Sinan\source\repos\ReportingMicroservices\Common.Helpers\obj\Debug\net5.0\Common.Helpers.pdb
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Helpers\bin\Debug\net5.0\Common.Helpers.deps.json
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Helpers\bin\Debug\net5.0\Common.Helpers.dll
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Helpers\bin\Debug\net5.0\ref\Common.Helpers.dll
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Helpers\bin\Debug\net5.0\Common.Helpers.pdb
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Helpers\obj\Debug\net5.0\Common.Helpers.csproj.AssemblyReference.cache
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Helpers\obj\Debug\net5.0\Common.Helpers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Helpers\obj\Debug\net5.0\Common.Helpers.AssemblyInfoInputs.cache
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Helpers\obj\Debug\net5.0\Common.Helpers.AssemblyInfo.cs
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Helpers\obj\Debug\net5.0\Common.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Helpers\obj\Debug\net5.0\Common.Helpers.dll
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Helpers\obj\Debug\net5.0\ref\Common.Helpers.dll
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Helpers\obj\Debug\net5.0\Common.Helpers.pdb

@@ -29,6 +29,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Helpers", "src\Build
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Messages", "src\BuildingBlocks\Common.Messages\Common.Messages.csproj", "{2A7C5C74-3300-430D-87AD-50BDDBC51C84}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Middleware", "src\BuildingBlocks\Common.Middleware\Common.Middleware.csproj", "{A4227B00-BB39-4F4F-BA26-FF2224838E19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Filters", "src\BuildingBlocks\Common.Filters\Common.Filters.csproj", "{27EA8324-6A74-43A3-AE2A-47D2A0DC5951}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +71,14 @@ Global
 		{2A7C5C74-3300-430D-87AD-50BDDBC51C84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A7C5C74-3300-430D-87AD-50BDDBC51C84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A7C5C74-3300-430D-87AD-50BDDBC51C84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4227B00-BB39-4F4F-BA26-FF2224838E19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4227B00-BB39-4F4F-BA26-FF2224838E19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4227B00-BB39-4F4F-BA26-FF2224838E19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4227B00-BB39-4F4F-BA26-FF2224838E19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27EA8324-6A74-43A3-AE2A-47D2A0DC5951}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27EA8324-6A74-43A3-AE2A-47D2A0DC5951}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27EA8324-6A74-43A3-AE2A-47D2A0DC5951}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27EA8324-6A74-43A3-AE2A-47D2A0DC5951}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +94,8 @@ Global
 		{E2A8B17C-AAD9-49FC-98FF-D997E1AF594F} = {106C7F74-DC3C-4B7F-80BF-9BDA99108E3E}
 		{DCAAB7F4-2650-47F7-A9A6-C21F956E3BBA} = {106C7F74-DC3C-4B7F-80BF-9BDA99108E3E}
 		{2A7C5C74-3300-430D-87AD-50BDDBC51C84} = {106C7F74-DC3C-4B7F-80BF-9BDA99108E3E}
+		{A4227B00-BB39-4F4F-BA26-FF2224838E19} = {106C7F74-DC3C-4B7F-80BF-9BDA99108E3E}
+		{27EA8324-6A74-43A3-AE2A-47D2A0DC5951} = {106C7F74-DC3C-4B7F-80BF-9BDA99108E3E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6E3973FA-0D6E-4506-8351-9BA2E36C6D8E}

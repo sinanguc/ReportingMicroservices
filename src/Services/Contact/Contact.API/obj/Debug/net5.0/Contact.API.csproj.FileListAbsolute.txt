@@ -92,3 +92,10 @@ C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.
 C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.API\bin\Debug\net5.0\Common.Helpers.pdb
 C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.API\bin\Debug\net5.0\Common.Messages.dll
 C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.API\bin\Debug\net5.0\Common.Messages.pdb
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.API\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.API\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.API\bin\Debug\net5.0\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.API\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.API\bin\Debug\net5.0\Common.Middleware.dll
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.API\bin\Debug\net5.0\Common.Middleware.pdb
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.API\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll

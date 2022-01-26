@@ -1,3 +1,4 @@
+using Common.Middleware.ExceptionHandler;
 using Contact.Application;
 using Contact.Infrastructure;
 using HealthChecks.UI.Client;
@@ -49,6 +50,8 @@ namespace Contact.API
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCustomExceptionHandler();
 
             app.UseEndpoints(endpoints =>
             {
