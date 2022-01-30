@@ -15,6 +15,7 @@ namespace Contact.Infrastructure
 
             services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
             services.AddScoped<IContactRepository, ContactRepository>();
+            services.AddScoped<IContactInfoRepository, ContactInfoRepository>();
 
             return services;
         }

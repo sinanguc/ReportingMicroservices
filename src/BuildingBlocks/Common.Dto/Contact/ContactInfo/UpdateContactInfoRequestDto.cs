@@ -3,15 +3,11 @@ using System;
 
 namespace Common.Dto.Contact
 {
-    public class ContactDetailDto
+    public class UpdateContactInfoRequestDto
     {
+        public Guid Id { get; set; }
+        public Guid PersonId { get; set; }
         public EnumContactInfoTypeDto InfoType { get; set; }
         public string InfoDetail { get; set; }
-
-        public class WithId : ContactDetailDto
-        {
-            public Guid Id { get; set; }
-            public Guid PersonId { get; set; }
-        }
     }
 }

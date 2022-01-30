@@ -8,6 +8,6 @@ namespace Common.Dto.Contact
         public string Surname { get; set; }
         public string Company { get; set; }
 
-        public List<ContactDetailDto> PersonContactInfo { get; set; }
+        public List<ContactInfoDto> PersonContactInfo { get; set; }
     }
 }

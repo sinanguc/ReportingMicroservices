@@ -1,5 +1,7 @@
-﻿using Common.Dto.Shared;
+﻿using Common.Dto.Contact.Filters;
+using Common.Dto.Shared;
 using Common.Helpers.Pagination;
+using Contact.Application.Features.Contacts.Queries.GetContactReportByLocation;
 using Contact.Application.Features.Contacts.Queries.GetContactsList;
 using Contact.Domain.Entities;
 using System;
@@ -10,10 +12,11 @@ namespace Contact.Application.Contracts.Persistence
 {
     public interface IContactRepository : IAsyncRepository<Person>
     {
-        Task<IEnumerable<Person>> GetPersonAsync();
 
-        Task<Person> GetPersonByPersonIdAsync(Guid personId);
+        Task<PagedResult<ContactVm>> GetContactsAsync(ContactFilter filter);
 
-        Task<PagedResult<ContactVm>> GetContactsAsync(GenericFilter filter);
+        Task<PagedResult<ContactReportByLocationVm>> GetContactReportByLocation(ContactReportByLocationFilter filter);
+
+        Task<List<ContactReportByLocationVm>> GetContactReportByLocation(string locationName = "");
     }
 }

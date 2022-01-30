@@ -1,0 +1,17 @@
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Filters\bin\Debug\net5.0\Common.Filters.deps.json
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Filters\bin\Debug\net5.0\Common.Filters.dll
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Filters\bin\Debug\net5.0\ref\Common.Filters.dll
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Filters\bin\Debug\net5.0\Common.Filters.pdb
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Filters\bin\Debug\net5.0\Common.Dto.dll
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Filters\bin\Debug\net5.0\Common.Messages.dll
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Filters\bin\Debug\net5.0\Common.Dto.pdb
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Filters\bin\Debug\net5.0\Common.Messages.pdb
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Filters\obj\Debug\net5.0\Common.Filters.csproj.AssemblyReference.cache
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Filters\obj\Debug\net5.0\Common.Filters.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Filters\obj\Debug\net5.0\Common.Filters.AssemblyInfoInputs.cache
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Filters\obj\Debug\net5.0\Common.Filters.AssemblyInfo.cs
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Filters\obj\Debug\net5.0\Common.Filters.csproj.CoreCompileInputs.cache
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Filters\obj\Debug\net5.0\Common.Filters.csproj.CopyComplete
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Filters\obj\Debug\net5.0\Common.Filters.dll
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Filters\obj\Debug\net5.0\ref\Common.Filters.dll
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Filters\obj\Debug\net5.0\Common.Filters.pdb

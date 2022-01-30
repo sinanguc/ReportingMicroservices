@@ -1,8 +1,11 @@
-﻿using Common.Dto.Shared;
+﻿using Common.Dto.Contact.Filters;
+using Common.Dto.Shared;
 using Common.Helpers.Pagination;
 using Contact.Application.Contracts.Persistence;
+using Contact.Application.Features.Contacts.Queries.GetContactReportByLocation;
 using Contact.Application.Features.Contacts.Queries.GetContactsList;
 using Contact.Domain.Entities;
+using Contact.Domain.Enums;
 using Contact.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -20,18 +23,7 @@ namespace Contact.Infrastructure.Repositories
 
         }
 
-        public async Task<IEnumerable<Person>> GetPersonAsync()
-        {
-            var contactList = await _dbContext.Persons.ToListAsync();
-            return contactList;
-        }
-
-        public Task<Person> GetPersonByPersonIdAsync(Guid personId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<PagedResult<ContactVm>> GetContactsAsync(GenericFilter filter)
+        public async Task<PagedResult<ContactVm>> GetContactsAsync(ContactFilter filter)
         {
             var contactList = (from person in _dbContext.Persons
                                join contact in _dbContext.PersonContactInfos on person.Id equals contact.PersonId into personContact
@@ -55,5 +47,50 @@ namespace Contact.Infrastructure.Repositories
             return await PaginationHelper.GetPagedAsync<ContactVm>(query: contactList, page: filter.CurrentPage, pageSize: filter.PageSize);
         }
 
+        public async Task<PagedResult<ContactReportByLocationVm>> GetContactReportByLocation(ContactReportByLocationFilter filter)
+        {
+            var report = (from person in _dbContext.Persons
+                          join contact in _dbContext.PersonContactInfos on person.Id equals contact.PersonId
+                          group contact by new
+                          {
+                              contact.InfoType,
+                              contact.InfoDetail
+                          } into contactGroup
+                          select new ContactReportByLocationVm
+                          {
+                              LocationName = contactGroup.Key.InfoDetail,
+                              PersonCountInLocation = contactGroup.Count(d => d.InfoType == ContactInfoType.Location),
+                              PhoneNumberCountInLocation = contactGroup.Count(d => d.InfoType == ContactInfoType.PhoneNumber)
+                          });
+
+            if (!string.IsNullOrWhiteSpace(filter.LocationName))
+                report = report.Where(d => d.LocationName == filter.LocationName);
+
+            return await PaginationHelper.GetPagedAsync<ContactReportByLocationVm>(query: report, page: filter.CurrentPage, pageSize: filter.PageSize);
+
+        }
+
+        public async Task<List<ContactReportByLocationVm>> GetContactReportByLocation(string locationName = "")
+        {
+            var report = (from person in _dbContext.Persons
+                          join contact in _dbContext.PersonContactInfos on person.Id equals contact.PersonId
+                          group contact by new
+                          {
+                              contact.InfoType,
+                              contact.InfoDetail
+                          } into contactGroup
+                          select new ContactReportByLocationVm
+                          {
+                              LocationName = contactGroup.Key.InfoDetail,
+                              PersonCountInLocation = contactGroup.Count(d => d.InfoType == ContactInfoType.Location),
+                              PhoneNumberCountInLocation = contactGroup.Count(d => d.InfoType == ContactInfoType.PhoneNumber)
+                          });
+
+            if (!string.IsNullOrWhiteSpace(locationName))
+                report = report.Where(d => d.LocationName == locationName);
+
+            return await Task.FromResult(report.ToList());
+
+        }
     }
 }

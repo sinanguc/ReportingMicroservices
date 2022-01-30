@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option csharp_namespace = "Contact.Grpc.Protos";
+
+// The greeting service definition.
+service ContactProtoService {
+  // Sends a greeting
+  rpc GetContactReportByLocation (ContactReportByLocationRequest) returns (ContactReportByLocationResponse);
+}
+
+// The request message containing the user's name.
+message ContactReportByLocationRequest {
+  string locationName = 1;
+}
+
+// The response message containing the greetings.
+message ContactReportByLocationResponse {
+    repeated ContactReportDto data = 1;
+}
+
+message ContactReportDto {
+     string locationName = 1;
+     int64 personCountInLocation = 2;
+     int64 phoneNumberCountInLocation  = 3;
+}

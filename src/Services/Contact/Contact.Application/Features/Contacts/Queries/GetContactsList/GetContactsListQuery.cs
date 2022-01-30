@@ -8,9 +8,9 @@ namespace Contact.Application.Features.Contacts.Queries.GetContactsList
 {
     public class GetContactsListQuery : IRequest<PagedResult<ContactDto>>
     {
-        public GetContactFilter Filter { get; set; }
+        public ContactFilter Filter { get; set; }
 
-        public GetContactsListQuery(GetContactFilter filter)
+        public GetContactsListQuery(ContactFilter filter)
         {
             Filter = filter ?? throw new ArgumentNullException(nameof(filter));
         }

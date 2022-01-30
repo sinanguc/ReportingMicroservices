@@ -2,7 +2,7 @@
 
 namespace Common.Dto.Contact.Filters
 {
-    public class GetContactFilter : GenericFilter
+    public class ContactInfoFilter : GenericFilter
     {
     }
 }

@@ -2,6 +2,7 @@
 using Common.Dto.Contact;
 using Common.Helpers.Pagination;
 using Contact.Application.Features.Contacts.Commands.InsertContact;
+using Contact.Application.Features.Contacts.Queries.GetContactReportByLocation;
 using Contact.Application.Features.Contacts.Queries.GetContactsList;
 using Contact.Domain.Entities;
 using System.Collections.Generic;
@@ -18,8 +19,16 @@ namespace Contact.Application.Mappings
             CreateMap<InsertContactRequestDto, Person>().ReverseMap();
             CreateMap<InsertContactResponseDto, Person>().ReverseMap();
 
-            CreateMap<ContactDetailDto, ContactDetailVm>().ReverseMap();
-            CreateMap<ContactDetailDto.WithId, ContactDetailVm>().ReverseMap();
+            CreateMap<ContactInfoDto, ContactDetailVm>().ReverseMap();
+            CreateMap<ContactInfoDto.WithId, ContactDetailVm>().ReverseMap();
+
+            CreateMap<InsertContactInfoRequestDto, PersonContactInfo>().ReverseMap();
+            CreateMap<InsertContactInfoResponseDto, PersonContactInfo>().ReverseMap();
+            CreateMap<UpdateContactInfoResponseDto, PersonContactInfo>().ReverseMap();
+
+            CreateMap<PagedResult<ContactInfoDto>, PagedResult<PersonContactInfo>>().ReverseMap();
+
+            CreateMap<ContactReportByLocationDto, ContactReportByLocationVm>().ReverseMap();
         }
     }
 }
