@@ -503,6 +503,18 @@
           "build/netcoreapp3.0/Microsoft.EntityFrameworkCore.Design.props": {}
         }
       },
+      "Microsoft.EntityFrameworkCore.InMemory/5.0.13": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.13"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.EntityFrameworkCore.InMemory.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.EntityFrameworkCore.InMemory.dll": {}
+        }
+      },
       "Microsoft.EntityFrameworkCore.Proxies/5.0.13": {
         "type": "package",
         "dependencies": {
@@ -2743,6 +2755,7 @@
         "dependencies": {
           "Contact.Application": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.13",
+          "Microsoft.EntityFrameworkCore.InMemory": "5.0.13",
           "Microsoft.EntityFrameworkCore.Proxies": "5.0.13",
           "Microsoft.EntityFrameworkCore.Relational": "5.0.13",
           "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
@@ -3336,6 +3349,20 @@
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Design.xml",
         "microsoft.entityframeworkcore.design.5.0.13.nupkg.sha512",
         "microsoft.entityframeworkcore.design.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.InMemory/5.0.13": {
+      "sha512": "yjF1UJiX6dDABiN15cyXs17r4OE9k6KH7iwODVejU1Ot+H49itWmvGOv/gm2UQn2qlZJcBI2A7KvqMZ9gz0A/A==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.inmemory/5.0.13",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/netstandard2.1/Microsoft.EntityFrameworkCore.InMemory.dll",
+        "lib/netstandard2.1/Microsoft.EntityFrameworkCore.InMemory.xml",
+        "microsoft.entityframeworkcore.inmemory.5.0.13.nupkg.sha512",
+        "microsoft.entityframeworkcore.inmemory.nuspec"
       ]
     },
     "Microsoft.EntityFrameworkCore.Proxies/5.0.13": {

@@ -19,13 +19,19 @@ namespace Contact.Application.Mappings
             CreateMap<InsertContactRequestDto, Person>().ReverseMap();
             CreateMap<InsertContactResponseDto, Person>().ReverseMap();
 
+            CreateMap<Person, InsertContactRequestDto>().ReverseMap();
+            CreateMap<Person, InsertContactResponseDto>().ReverseMap();
+
             CreateMap<ContactInfoDto, ContactDetailVm>().ReverseMap();
             CreateMap<ContactInfoDto.WithId, ContactDetailVm>().ReverseMap();
+           
 
             CreateMap<InsertContactInfoRequestDto, PersonContactInfo>().ReverseMap();
             CreateMap<InsertContactInfoResponseDto, PersonContactInfo>().ReverseMap();
             CreateMap<UpdateContactInfoResponseDto, PersonContactInfo>().ReverseMap();
 
+            CreateMap<ContactInfoDto, PersonContactInfo>().ReverseMap();
+            CreateMap<ContactInfoDto.WithId, PersonContactInfo>().ReverseMap();
             CreateMap<PagedResult<ContactInfoDto>, PagedResult<PersonContactInfo>>().ReverseMap();
 
             CreateMap<ContactReportByLocationDto, ContactReportByLocationVm>().ReverseMap();

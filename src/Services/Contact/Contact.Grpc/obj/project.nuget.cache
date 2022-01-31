@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "PxwVYG+2Gn2WWdO6lTUBhaQZR8chLBd/dHmV+HE25nOIJiQuydpiOewQlYUeDY4OmB1X41Ua/4EAySv1GEkd9g==",
+  "dgSpecHash": "pVUv7NmqRAMLCMCusHsOe0B4NrrtRcFkUGbdSmyv6EfMKiGVBgH9JXjSBnuapm6NKgWX0BP4BnFHLcqu4h5KwQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Sinan\\source\\repos\\ReportingMicroservices\\src\\Services\\Contact\\Contact.Grpc\\Contact.Grpc.csproj",
   "expectedPackageFiles": [
@@ -48,6 +48,7 @@
     "C:\\Users\\Sinan\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.13\\microsoft.entityframeworkcore.5.0.13.nupkg.sha512",
     "C:\\Users\\Sinan\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.13\\microsoft.entityframeworkcore.abstractions.5.0.13.nupkg.sha512",
     "C:\\Users\\Sinan\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.13\\microsoft.entityframeworkcore.analyzers.5.0.13.nupkg.sha512",
+    "C:\\Users\\Sinan\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\5.0.13\\microsoft.entityframeworkcore.inmemory.5.0.13.nupkg.sha512",
     "C:\\Users\\Sinan\\.nuget\\packages\\microsoft.entityframeworkcore.proxies\\5.0.13\\microsoft.entityframeworkcore.proxies.5.0.13.nupkg.sha512",
     "C:\\Users\\Sinan\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\5.0.13\\microsoft.entityframeworkcore.relational.5.0.13.nupkg.sha512",
     "C:\\Users\\Sinan\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",

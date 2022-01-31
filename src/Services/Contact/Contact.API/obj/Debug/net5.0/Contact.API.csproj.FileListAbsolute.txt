@@ -99,3 +99,4 @@ C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.
 C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.API\bin\Debug\net5.0\Common.Middleware.dll
 C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.API\bin\Debug\net5.0\Common.Middleware.pdb
 C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.API\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.API\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.InMemory.dll
