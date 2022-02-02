@@ -9,4 +9,3 @@ C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Dto
 C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Dto\obj\Debug\net5.0\Common.Dto.dll
 C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Dto\obj\Debug\net5.0\ref\Common.Dto.dll
 C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Dto\obj\Debug\net5.0\Common.Dto.pdb
-C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Dto\obj\Debug\net5.0\Common.Dto.csproj.AssemblyReference.cache

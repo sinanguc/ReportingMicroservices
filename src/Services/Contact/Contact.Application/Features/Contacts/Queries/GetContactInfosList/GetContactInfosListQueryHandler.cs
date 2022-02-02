@@ -22,7 +22,7 @@ namespace Contact.Application.Features.Contacts.Queries.GetContactInfosList
 
         public async Task<PagedResult<ContactInfoDto>> Handle(GetContactInfosListQuery request, CancellationToken cancellationToken)
         {
-            var contactInfoList = await _contactInfoRepository.GetContactInfosAsync(request.Filter);
+            var contactInfoList = await _contactInfoRepository.GetContactInfosAsync(request.Filter, cancellationToken);
             return _mapper.Map<PagedResult<ContactInfoDto>>(contactInfoList);
         }
     }

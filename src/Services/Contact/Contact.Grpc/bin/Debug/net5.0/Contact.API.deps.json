@@ -689,6 +689,20 @@
           }
         }
       },
+      "Microsoft.EntityFrameworkCore.InMemory/5.0.13": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.13"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.EntityFrameworkCore.InMemory.dll": {
+            "assemblyVersion": "5.0.13.0",
+            "fileVersion": "5.0.1321.56013"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.EntityFrameworkCore.InMemory.dll": {}
+        }
+      },
       "Microsoft.EntityFrameworkCore.Proxies/5.0.13": {
         "dependencies": {
           "Castle.Core": "4.4.1",
@@ -2246,6 +2260,7 @@
         "dependencies": {
           "Contact.Application": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.13",
+          "Microsoft.EntityFrameworkCore.InMemory": "5.0.13",
           "Microsoft.EntityFrameworkCore.Proxies": "5.0.13",
           "Microsoft.EntityFrameworkCore.Relational": "5.0.13",
           "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
@@ -4032,6 +4047,13 @@
       "sha512": "sha512-T9Qq5RebYkx2EEU7ahHNediObrIE5dsRKt6mTkVwqrVqX1Kp+/HD02T1ZMdI1H62WLHH4QIdcCfjgsKgenTQFg==",
       "path": "microsoft.entityframeworkcore.design/5.0.13",
       "hashPath": "microsoft.entityframeworkcore.design.5.0.13.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.InMemory/5.0.13": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yjF1UJiX6dDABiN15cyXs17r4OE9k6KH7iwODVejU1Ot+H49itWmvGOv/gm2UQn2qlZJcBI2A7KvqMZ9gz0A/A==",
+      "path": "microsoft.entityframeworkcore.inmemory/5.0.13",
+      "hashPath": "microsoft.entityframeworkcore.inmemory.5.0.13.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Proxies/5.0.13": {
       "type": "package",

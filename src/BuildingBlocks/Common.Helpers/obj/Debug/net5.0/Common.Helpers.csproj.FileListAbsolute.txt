@@ -20,4 +20,3 @@ C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Hel
 C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Helpers\obj\Debug\net5.0\Common.Helpers.dll
 C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Helpers\obj\Debug\net5.0\ref\Common.Helpers.dll
 C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Helpers\obj\Debug\net5.0\Common.Helpers.pdb
-C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Helpers\obj\Debug\net5.0\Common.Helpers.csproj.AssemblyReference.cache

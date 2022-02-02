@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Contact.Infrastructure.Repositories
@@ -23,7 +24,7 @@ namespace Contact.Infrastructure.Repositories
 
         }
 
-        public async Task<PagedResult<ContactVm>> GetContactsAsync(ContactFilter filter)
+        public async Task<PagedResult<ContactVm>> GetContactsAsync(ContactFilter filter, CancellationToken cancellationToken)
         {
             var contactList = (from person in _dbContext.Persons
                                join contact in _dbContext.PersonContactInfos on person.Id equals contact.PersonId into personContact
@@ -47,7 +48,7 @@ namespace Contact.Infrastructure.Repositories
             return await PaginationHelper.GetPagedAsync<ContactVm>(query: contactList, page: filter.CurrentPage, pageSize: filter.PageSize);
         }
 
-        public async Task<PagedResult<ContactReportByLocationVm>> GetContactReportByLocation(ContactReportByLocationFilter filter)
+        public async Task<PagedResult<ContactReportByLocationVm>> GetContactReportByLocation(ContactReportByLocationFilter filter, CancellationToken cancellationToken)
         {
             var report = (from person in _dbContext.Persons
                           join contact in _dbContext.PersonContactInfos on person.Id equals contact.PersonId
@@ -70,7 +71,7 @@ namespace Contact.Infrastructure.Repositories
 
         }
 
-        public async Task<List<ContactReportByLocationVm>> GetContactReportByLocation(string locationName = "")
+        public async Task<List<ContactReportByLocationVm>> GetContactReportByLocation(string locationName, CancellationToken cancellationToken)
         {
             var report = (from person in _dbContext.Persons
                           join contact in _dbContext.PersonContactInfos on person.Id equals contact.PersonId

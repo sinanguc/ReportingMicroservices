@@ -9,4 +9,3 @@ C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.
 C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.Domain\obj\Debug\net5.0\Contact.Domain.dll
 C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.Domain\obj\Debug\net5.0\ref\Contact.Domain.dll
 C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.Domain\obj\Debug\net5.0\Contact.Domain.pdb
-C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.Domain\obj\Debug\net5.0\Contact.Domain.csproj.AssemblyReference.cache

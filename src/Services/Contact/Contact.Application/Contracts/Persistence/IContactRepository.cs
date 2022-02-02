@@ -6,6 +6,7 @@ using Contact.Application.Features.Contacts.Queries.GetContactsList;
 using Contact.Domain.Entities;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Contact.Application.Contracts.Persistence
@@ -13,10 +14,10 @@ namespace Contact.Application.Contracts.Persistence
     public interface IContactRepository : IAsyncRepository<Person>
     {
 
-        Task<PagedResult<ContactVm>> GetContactsAsync(ContactFilter filter);
+        Task<PagedResult<ContactVm>> GetContactsAsync(ContactFilter filter, CancellationToken cancellationToken);
 
-        Task<PagedResult<ContactReportByLocationVm>> GetContactReportByLocation(ContactReportByLocationFilter filter);
+        Task<PagedResult<ContactReportByLocationVm>> GetContactReportByLocation(ContactReportByLocationFilter filter, CancellationToken cancellationToken);
 
-        Task<List<ContactReportByLocationVm>> GetContactReportByLocation(string locationName = "");
+        Task<List<ContactReportByLocationVm>> GetContactReportByLocation(string locationName, CancellationToken cancellationToken);
     }
 }

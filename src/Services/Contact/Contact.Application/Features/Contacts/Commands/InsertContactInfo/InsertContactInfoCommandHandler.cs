@@ -23,7 +23,7 @@ namespace Contact.Application.Features.Contacts.Commands.InsertContactInfo
         public async Task<InsertContactInfoResponseDto> Handle(InsertContactInfoCommand request, CancellationToken cancellationToken)
         {
             var PersonContactInfoEntity = _mapper.Map<PersonContactInfo>(request.InsertContactInfoRequestDto);
-            var contactInfoList = await _contactInfoRepository.InsertAsync(PersonContactInfoEntity);
+            var contactInfoList = await _contactInfoRepository.InsertAsync(PersonContactInfoEntity, cancellationToken);
             return _mapper.Map<InsertContactInfoResponseDto>(contactInfoList);
         }
     }

@@ -23,7 +23,7 @@ namespace Contact.Application.Features.Contacts.Queries.GetContactReportByLocati
 
         public async Task<PagedResult<ContactReportByLocationDto>> Handle(GetContactReportByLocationQuery request, CancellationToken cancellationToken)
         {
-            var contactReport = await _contactRepository.GetContactReportByLocation(request.Filter.LocationName);
+            var contactReport = await _contactRepository.GetContactReportByLocation(request.Filter.LocationName, cancellationToken);
             return _mapper.Map<PagedResult<ContactReportByLocationDto>>(contactReport);
         }
     }
@@ -42,7 +42,7 @@ namespace Contact.Application.Features.Contacts.Queries.GetContactReportByLocati
 
         public async Task<List<ContactReportByLocationDto>> Handle(GetContactReportByLocationForExportFileQuery request, CancellationToken cancellationToken)
         {
-            var contactReport = await _contactRepository.GetContactReportByLocation(request.LocationName);
+            var contactReport = await _contactRepository.GetContactReportByLocation(request.LocationName, cancellationToken);
             return _mapper.Map<List<ContactReportByLocationDto>>(contactReport);
         }
     }

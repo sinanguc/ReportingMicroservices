@@ -3,10 +3,7 @@ using Common.Helpers.Pagination;
 using Contact.Application.Contracts.Persistence;
 using Contact.Domain.Entities;
 using Contact.Infrastructure.Persistence;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Contact.Infrastructure.Repositories
@@ -17,7 +14,7 @@ namespace Contact.Infrastructure.Repositories
             : base(dbContext)
         { }
 
-        public async Task<PagedResult<PersonContactInfo>> GetContactInfosAsync(ContactInfoFilter filter)
+        public async Task<PagedResult<PersonContactInfo>> GetContactInfosAsync(ContactInfoFilter filter, CancellationToken cancellationToken)
         {
             return await _dbContext.PersonContactInfos.GetPagedAsync(page: filter.CurrentPage, pageSize: filter.PageSize);
         }

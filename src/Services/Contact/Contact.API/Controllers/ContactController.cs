@@ -14,6 +14,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Net;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Contact.API.Controllers
@@ -31,10 +32,10 @@ namespace Contact.API.Controllers
 
         [HttpGet("GetContact")]
         [ProducesResponseType(typeof(GenericResult), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<GenericResult>> GetContacts([FromQuery] ContactFilter filter)
+        public async Task<ActionResult<GenericResult>> GetContacts([FromQuery] ContactFilter filter, CancellationToken cancellationToken)
         {
             var query = new GetContactsListQuery(filter);
-            var contacts = await _mediator.Send(query);
+            var contacts = await _mediator.Send(query, cancellationToken);
 
             GenericResult result = new GenericResult();
             result.Data = contacts;
@@ -87,10 +88,10 @@ namespace Contact.API.Controllers
 
         [HttpGet("GetContactInfo")]
         [ProducesResponseType(typeof(GenericResult), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<GenericResult>> GetContactInfos([FromQuery] ContactInfoFilter filter)
+        public async Task<ActionResult<GenericResult>> GetContactInfos([FromQuery] ContactInfoFilter filter, CancellationToken cancellationToken)
         {
             var query = new GetContactInfosListQuery(filter);
-            var contactInfos = await _mediator.Send(query);
+            var contactInfos = await _mediator.Send(query, cancellationToken);
 
             GenericResult result = new GenericResult();
             result.Data = contactInfos;

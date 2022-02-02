@@ -20,8 +20,8 @@ namespace Contact.Application.Features.Contacts.Commands.DeleteContact
 
         public async Task<Guid> Handle(DeleteContactCommand request, CancellationToken cancellationToken)
         {
-            var personEntity = await _contactRepository.GetByIdAsync(request.Id);
-            await _contactRepository.DeleteAsync(personEntity);
+            var personEntity = await _contactRepository.GetByIdAsync(request.Id, cancellationToken);
+            await _contactRepository.DeleteAsync(personEntity, cancellationToken);
             return request.Id;
         }
     }
