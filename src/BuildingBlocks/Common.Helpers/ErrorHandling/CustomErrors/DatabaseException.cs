@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common.Messages;
+using System;
 using System.Net;
 using System.Runtime.Serialization;
 
@@ -10,7 +11,7 @@ namespace Common.Helpers.ErrorHandling.CustomErrors
         public int Status { get; set; } = (int)HttpStatusCode.InternalServerError;
 
         public object Value { get; set; }
-        public DatabaseException() : base()
+        public DatabaseException() : base(GenericMessages.Error_Occurred_During_Database_Registration)
         { }
 
         public DatabaseException(String message) : base(message)

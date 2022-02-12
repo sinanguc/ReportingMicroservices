@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common.Messages;
+using System;
 using System.Globalization;
 using System.Net;
 using System.Runtime.Serialization;
@@ -11,7 +12,7 @@ namespace Common.Helpers.ErrorHandling.CustomErrors
         public int Status { get; set; } = (int)HttpStatusCode.BadRequest;
 
         public object Value { get; set; }
-        public ValidationException() : base()
+        public ValidationException() : base(GenericMessages.Please_Fill_In_All_Required_Fields)
         { }
 
         public ValidationException(String message) : base(message)
@@ -32,7 +33,7 @@ namespace Common.Helpers.ErrorHandling.CustomErrors
 
         public object Value { get; set; }
 
-        public RecordExistException() : base()
+        public RecordExistException() : base(GenericMessages.Already_Registered)
         { }
 
         public RecordExistException(String message) : base(message)
@@ -54,7 +55,7 @@ namespace Common.Helpers.ErrorHandling.CustomErrors
         public int Status { get; set; } = (int)HttpStatusCode.NotFound;
 
         public object Value { get; set; }
-        public RecordNotFoundException() : base()
+        public RecordNotFoundException() : base(GenericMessages.No_Records_Found)
         { }
 
         public RecordNotFoundException(String message) : base(message)

@@ -1,2 +1,0 @@
-obj\Debug\net5.0/Contact.cs \
-obj\Debug\net5.0/ContactGrpc.cs: ../../Contact/Contact.Grpc/Protos/contact.proto

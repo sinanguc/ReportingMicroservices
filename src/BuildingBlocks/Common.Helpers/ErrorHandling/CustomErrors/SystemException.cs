@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common.Messages;
+using System;
 using System.Net;
 using System.Runtime.Serialization;
 

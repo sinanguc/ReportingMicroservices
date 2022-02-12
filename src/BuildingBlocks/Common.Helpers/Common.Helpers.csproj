@@ -11,11 +11,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="DLL\EPPlus\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Common.Messages\Common.Messages.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="EPPlus">
-      <HintPath>..\..\Services\Report\Report.API\DLL\EPPlus.dll</HintPath>
+      <HintPath>DLL\EPPlus\EPPlus.dll</HintPath>
     </Reference>
     <Reference Include="OfficeOpenXml.Core.ExcelPackage">
-      <HintPath>..\..\Services\Report\Report.API\DLL\OfficeOpenXml.Core.ExcelPackage.dll</HintPath>
+      <HintPath>DLL\EPPlus\OfficeOpenXml.Core.ExcelPackage.dll</HintPath>
     </Reference>
   </ItemGroup>
 

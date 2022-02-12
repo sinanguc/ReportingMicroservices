@@ -11,6 +11,11 @@ using System.Text;
 
 namespace Common.Helpers.Excel
 {
+    /// <summary>
+    /// This method helps that you are working with excel files
+    /// You can send Generic List and get excel file of byte type
+    /// Or you can save your byte type as excel file in your data store
+    /// </summary>
     public static class ExcelExportHelper
     {
         public static string ExcelContentType
@@ -133,15 +138,6 @@ namespace Common.Helpers.Excel
                 columns.Add(name);
             }
             return ExportExcel(ListToDataTable<T>(data), columns, heading, showSlno);
-        }
-
-        public static void SaveFile(byte[] bytes, string path, string fileName)
-        {
-            using (ExcelPackage package = new ExcelPackage(new MemoryStream(bytes)))
-            {
-                package.SaveAs(new FileInfo($"{path}\\{fileName}.xlsx"));
-                package.Dispose();
-            }
         }
 
         public static byte[] SaveToExcel(this byte[] bytes, string path, string fileName, out string savedFileName)

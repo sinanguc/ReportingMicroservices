@@ -24,7 +24,6 @@
 
   <ItemGroup>
     <Folder Include="Assets\Files\" />
-    <Folder Include="DLL\" />
     <Folder Include="Protos\" />
   </ItemGroup>
 
