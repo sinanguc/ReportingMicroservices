@@ -9,10 +9,12 @@ using Contact.Application.Features.Contacts.Commands.InsertContactInfo;
 using Contact.Application.Features.Contacts.Commands.UpdateContact;
 using Contact.Application.Features.Contacts.Commands.UpdateContactInfo;
 using Contact.Application.Features.Contacts.Queries.GetContactInfosList;
+using Contact.Application.Features.Contacts.Queries.GetContactReportByLocation;
 using Contact.Application.Features.Contacts.Queries.GetContactsList;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
@@ -36,6 +38,19 @@ namespace Contact.API.Controllers
         {
             var query = new GetContactsListQuery(filter);
             var contacts = await _mediator.Send(query, cancellationToken);
+
+            GenericResult result = new GenericResult();
+            result.Data = contacts;
+            result.Message = GenericMessages.Successfully_Listed;
+            return Ok(result);
+        }
+
+        [HttpGet("GetReportt")]
+        [ProducesResponseType(typeof(GenericResult), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<GenericResult>> GetReportt()
+        {
+            var query = new GetContactReportByLocationForExportFileQuery(String.Empty);
+            var contacts = await _mediator.Send(query);
 
             GenericResult result = new GenericResult();
             result.Data = contacts;
@@ -99,7 +114,7 @@ namespace Contact.API.Controllers
             return Ok(result);
         }
 
-        [HttpDelete("AddContactInfo")]
+        [HttpPost("AddContactInfo")]
         [ProducesResponseType(typeof(GenericResult), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<GenericResult>> AddContactInfo([FromBody] InsertContactInfoRequestDto request)
         {
@@ -113,7 +128,7 @@ namespace Contact.API.Controllers
             return Ok(result);
         }
 
-        [HttpDelete("UpdateContactInfo")]
+        [HttpPut("UpdateContactInfo")]
         [ProducesResponseType(typeof(GenericResult), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<GenericResult>> UpdateContactInfo([FromBody] UpdateContactInfoRequestDto request)
         {

@@ -1,4 +1,6 @@
-﻿namespace Contact.Application.Features.Contacts.Queries.GetContactReportByLocation
+﻿using Contact.Domain.Enums;
+
+namespace Contact.Application.Features.Contacts.Queries.GetContactReportByLocation
 {
     public class ContactReportByLocationVm
     {

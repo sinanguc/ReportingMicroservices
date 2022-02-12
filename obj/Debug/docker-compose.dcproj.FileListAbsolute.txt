@@ -1,0 +1,1 @@
+C:\Users\Sinan\source\repos\ReportingMicroservices\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache

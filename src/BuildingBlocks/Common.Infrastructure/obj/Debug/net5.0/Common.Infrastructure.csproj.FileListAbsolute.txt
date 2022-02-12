@@ -1,0 +1,11 @@
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Infrastructure\bin\Debug\net5.0\Common.Infrastructure.deps.json
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Infrastructure\bin\Debug\net5.0\Common.Infrastructure.dll
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Infrastructure\bin\Debug\net5.0\ref\Common.Infrastructure.dll
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Infrastructure\bin\Debug\net5.0\Common.Infrastructure.pdb
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Infrastructure\obj\Debug\net5.0\Common.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Infrastructure\obj\Debug\net5.0\Common.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Infrastructure\obj\Debug\net5.0\Common.Infrastructure.AssemblyInfo.cs
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Infrastructure\obj\Debug\net5.0\Common.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Infrastructure\obj\Debug\net5.0\Common.Infrastructure.dll
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Infrastructure\obj\Debug\net5.0\ref\Common.Infrastructure.dll
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Infrastructure\obj\Debug\net5.0\Common.Infrastructure.pdb

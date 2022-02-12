@@ -48,21 +48,29 @@ namespace Contact.Infrastructure.Repositories
             return await PaginationHelper.GetPagedAsync<ContactVm>(query: contactList, page: filter.CurrentPage, pageSize: filter.PageSize);
         }
 
-        public async Task<PagedResult<ContactReportByLocationVm>> GetContactReportByLocation(ContactReportByLocationFilter filter, CancellationToken cancellationToken)
+        public async Task<PagedResult<ContactReportByLocationVm>> GetContactReportByLocationFilter(ContactReportByLocationFilter filter, CancellationToken cancellationToken)
         {
-            var report = (from person in _dbContext.Persons
-                          join contact in _dbContext.PersonContactInfos on person.Id equals contact.PersonId
+            var report = (from contact in _dbContext.PersonContactInfos
+                          where contact.InfoType == ContactInfoType.Location
                           group contact by new
                           {
-                              contact.InfoType,
                               contact.InfoDetail
                           } into contactGroup
                           select new ContactReportByLocationVm
                           {
                               LocationName = contactGroup.Key.InfoDetail,
-                              PersonCountInLocation = contactGroup.Count(d => d.InfoType == ContactInfoType.Location),
-                              PhoneNumberCountInLocation = contactGroup.Count(d => d.InfoType == ContactInfoType.PhoneNumber)
-                          });
+                              PersonCountInLocation = (from c in _dbContext.PersonContactInfos
+                                                       where c.InfoDetail == contactGroup.Key.InfoDetail
+                                                       select c).Count(),
+                              PhoneNumberCountInLocation = (from c in (from c in _dbContext.PersonContactInfos
+                                                                       where c.InfoType == ContactInfoType.Location
+                                                                       select c)
+                                                            join d in (from d in _dbContext.PersonContactInfos
+                                                                       where d.InfoType == ContactInfoType.PhoneNumber
+                                                                       select d) on c.PersonId equals d.PersonId
+                                                            where c.InfoDetail == contactGroup.Key.InfoDetail
+                                                            select d).Count()
+                          }).Distinct();
 
             if (!string.IsNullOrWhiteSpace(filter.LocationName))
                 report = report.Where(d => d.LocationName == filter.LocationName);
@@ -73,19 +81,27 @@ namespace Contact.Infrastructure.Repositories
 
         public async Task<List<ContactReportByLocationVm>> GetContactReportByLocation(string locationName, CancellationToken cancellationToken)
         {
-            var report = (from person in _dbContext.Persons
-                          join contact in _dbContext.PersonContactInfos on person.Id equals contact.PersonId
+            var report = (from contact in _dbContext.PersonContactInfos
+                          where contact.InfoType == ContactInfoType.Location
                           group contact by new
                           {
-                              contact.InfoType,
                               contact.InfoDetail
                           } into contactGroup
                           select new ContactReportByLocationVm
                           {
                               LocationName = contactGroup.Key.InfoDetail,
-                              PersonCountInLocation = contactGroup.Count(d => d.InfoType == ContactInfoType.Location),
-                              PhoneNumberCountInLocation = contactGroup.Count(d => d.InfoType == ContactInfoType.PhoneNumber)
-                          });
+                              PersonCountInLocation = (from c in _dbContext.PersonContactInfos 
+                                                       where c.InfoDetail == contactGroup.Key.InfoDetail 
+                                                       select c).Count(),
+                              PhoneNumberCountInLocation = (from c in (from c in _dbContext.PersonContactInfos 
+                                                                       where c.InfoType == ContactInfoType.Location 
+                                                                       select c)
+                                                            join d in (from d in _dbContext.PersonContactInfos 
+                                                                       where d.InfoType == ContactInfoType.PhoneNumber 
+                                                                       select d) on c.PersonId equals d.PersonId
+                                                            where c.InfoDetail == contactGroup.Key.InfoDetail
+                                                            select d).Count()
+                          }).Distinct();
 
             if (!string.IsNullOrWhiteSpace(locationName))
                 report = report.Where(d => d.LocationName == locationName);

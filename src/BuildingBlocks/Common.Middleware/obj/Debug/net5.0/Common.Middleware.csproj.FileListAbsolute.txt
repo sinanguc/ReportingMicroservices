@@ -15,3 +15,5 @@ C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Mid
 C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Middleware\obj\Debug\net5.0\Common.Middleware.dll
 C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Middleware\obj\Debug\net5.0\ref\Common.Middleware.dll
 C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Middleware\obj\Debug\net5.0\Common.Middleware.pdb
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Middleware\bin\Debug\net5.0\EPPlus.dll
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\BuildingBlocks\Common.Middleware\bin\Debug\net5.0\EPPlus.xml

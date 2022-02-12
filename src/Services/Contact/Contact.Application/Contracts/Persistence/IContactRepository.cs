@@ -16,7 +16,7 @@ namespace Contact.Application.Contracts.Persistence
 
         Task<PagedResult<ContactVm>> GetContactsAsync(ContactFilter filter, CancellationToken cancellationToken);
 
-        Task<PagedResult<ContactReportByLocationVm>> GetContactReportByLocation(ContactReportByLocationFilter filter, CancellationToken cancellationToken);
+        Task<PagedResult<ContactReportByLocationVm>> GetContactReportByLocationFilter(ContactReportByLocationFilter filter, CancellationToken cancellationToken);
 
         Task<List<ContactReportByLocationVm>> GetContactReportByLocation(string locationName, CancellationToken cancellationToken);
     }

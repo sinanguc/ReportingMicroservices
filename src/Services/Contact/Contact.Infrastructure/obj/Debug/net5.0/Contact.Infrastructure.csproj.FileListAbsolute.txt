@@ -22,3 +22,5 @@ C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.
 C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.Infrastructure\bin\Debug\net5.0\Common.Helpers.dll
 C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.Infrastructure\bin\Debug\net5.0\Common.Dto.pdb
 C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.Infrastructure\bin\Debug\net5.0\Common.Helpers.pdb
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.Infrastructure\bin\Debug\net5.0\EPPlus.dll
+C:\Users\Sinan\source\repos\ReportingMicroservices\src\Services\Contact\Contact.Infrastructure\bin\Debug\net5.0\EPPlus.xml
