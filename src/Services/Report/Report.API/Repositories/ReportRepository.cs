@@ -1,11 +1,10 @@
-﻿using Common.Helpers.Pagination;
-using MongoDB.Bson;
+﻿using Common.Dto.Report.Report;
+using Common.Helpers.Pagination;
 using MongoDB.Driver;
 using Report.API.Data.Interfaces;
 using Report.API.Entities;
 using Report.API.Repositories.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -21,9 +20,9 @@ namespace Report.API.Repositories
             _context = context;
         }
 
-        public async Task<PagedResult<Entities.Report>> GetReportsAsync(CancellationToken cancellicationToken)
+        public async Task<PagedResult<Entities.Report>> GetReportsAsync(ReportFilter filter, CancellationToken cancellicationToken)
         {
-            var result = await _context.Reports.AsQueryable().GetPagedAsync(page: 1, pageSize: 10);
+            var result = await _context.Reports.AsQueryable().GetPagedAsync(page: filter.CurrentPage, pageSize: filter.PageSize);
             return result;
         }
 

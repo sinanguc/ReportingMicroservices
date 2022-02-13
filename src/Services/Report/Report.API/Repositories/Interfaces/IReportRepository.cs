@@ -1,6 +1,6 @@
-﻿using Common.Helpers.Pagination;
+﻿using Common.Dto.Report.Report;
+using Common.Helpers.Pagination;
 using Report.API.Entities;
-using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -8,7 +8,8 @@ namespace Report.API.Repositories.Interfaces
 {
     public interface IReportRepository
     {
-        Task<PagedResult<Entities.Report>> GetReportsAsync(CancellationToken cancellicationToken);
+        Task<PagedResult<Entities.Report>> GetReportsAsync(ReportFilter filter, CancellationToken cancellicationToken);
+
         Task<Entities.Report> InsertReportAsync(Entities.Report report, CancellationToken cancellicationToken);
 
         Task<Entities.Report> GetReportByIdAsync(string id, CancellationToken cancellicationToken);

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Common.Dto.Report.Report;
 using Common.Dto.Shared;
+using Common.Helpers.Pagination;
 using Common.Messages;
 using EventBus.Messages.Events;
 using MassTransit;
@@ -8,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Report.API.GrpcServices;
 using Report.API.Repositories.Interfaces;
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -29,16 +31,18 @@ namespace Report.API.Controllers
         }
 
         [HttpGet("GetReports")]
-        public async Task<GenericResult> GetReports(CancellationToken cancellicationToken)
+        public async Task<GenericResult> GetReports([FromQuery] ReportFilter filter, CancellationToken cancellicationToken)
         {
+            var reports = await _reportRepository.GetReportsAsync(filter: filter, cancellicationToken: cancellicationToken);
+
             GenericResult result = new();
-            result.Data = await _reportRepository.GetReportsAsync(cancellicationToken: cancellicationToken);
+            result.Data = _mapper.Map<PagedResult<ReportDto>>(reports);
             result.Message = GenericMessages.Successfully_Listed;
             return result;
         }
 
         [HttpPost("CreateReport")]
-        public async Task<GenericResult> CreateReport(InsertReportRequestDto insertReportRequestDto, CancellationToken cancellicationToken)
+        public async Task<GenericResult> CreateReport([FromBody] InsertReportRequestDto insertReportRequestDto, CancellationToken cancellicationToken)
         {
             var reportEntity = _mapper.Map<Entities.Report>(insertReportRequestDto);
             reportEntity = await _reportRepository.InsertReportAsync(report: reportEntity, cancellicationToken: cancellicationToken);
