@@ -46,10 +46,10 @@ namespace Report.API.EventBusConsumer
 
             var report = await _reportRepository.GetReportByIdAsync(reportEntity.Id, cancellationToken);
 
-            var reportTypePrm = await _reportRepository.GetServiceByIdAsync(report.ReportTypeId, cancellationToken);
+            var reportTypePrm = await _reportRepository.GetReportTypeByIdAsync(report.ReportTypeId, cancellationToken);
 
             reportEntity.Status = Enums.EnumReportStatusType.Processing;
-            await _reportRepository.UpdateAsync(reportEntity, cancellationToken);
+            await _reportRepository.UpdateReportAsync(reportEntity, cancellationToken);
 
             var result = _contactGrpcService.GetContactReportByLocation(String.Empty);
 
@@ -63,7 +63,7 @@ namespace Report.API.EventBusConsumer
             reportEntity.CompletedDate = DateTime.Now;
             reportEntity.FilePath = fileName;
             reportEntity.Status = Enums.EnumReportStatusType.Completed;
-            await _reportRepository.UpdateAsync(reportEntity, cancellationToken);
+            await _reportRepository.UpdateReportAsync(reportEntity, cancellationToken);
 
             // Maybe we can add some publish event for notification service
 

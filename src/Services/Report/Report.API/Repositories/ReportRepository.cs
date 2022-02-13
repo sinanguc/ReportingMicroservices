@@ -27,7 +27,17 @@ namespace Report.API.Repositories
             return result;
         }
 
-        public async Task<Entities.Report> GenerateReportAsync(Entities.Report report, CancellationToken cancellicationToken)
+        public async Task<Entities.Report> GetReportByIdAsync(string id, CancellationToken cancellicationToken)
+        {
+            return await _context.Reports.Find(d => d.Id == id).FirstOrDefaultAsync(cancellationToken: cancellicationToken);
+        }
+
+        public async Task<ReportTypePrm> GetReportTypeByIdAsync(Enums.EnumReportType reportTypeId, CancellationToken cancellicationToken)
+        {
+            return await _context.ReportTypePrms.Find(d => d.ReportId == reportTypeId).FirstOrDefaultAsync(cancellationToken: cancellicationToken);
+        }
+
+        public async Task<Entities.Report> InsertReportAsync(Entities.Report report, CancellationToken cancellicationToken)
         {
             report.Status = Enums.EnumReportStatusType.Preparing;
             report.RequestDate = DateTime.Now;
@@ -35,22 +45,7 @@ namespace Report.API.Repositories
             return report;
         }
 
-        public async Task<Entities.Report> GetReportByIdAsync(string id, CancellationToken cancellicationToken)
-        {
-            return await _context.Reports.Find(d => d.Id == id).FirstOrDefaultAsync(cancellationToken: cancellicationToken);
-        }
-
-        public async Task<ReportTypePrm> GetServiceByIdAsync(Enums.EnumReportType reportTypeId, CancellationToken cancellicationToken)
-        {
-            return await _context.ReportTypePrms.Find(d => d.ReportId == reportTypeId).FirstOrDefaultAsync(cancellationToken: cancellicationToken);
-        }
-
-        public async Task<IEnumerable<ReportTypePrm>> GetServicesAsync(CancellationToken cancellicationToken)
-        {
-            return await _context.ReportTypePrms.Find(d => true).ToListAsync();
-        }
-
-        public async Task<bool> UpdateAsync(Entities.Report report, CancellationToken cancellicationToken)
+        public async Task<bool> UpdateReportAsync(Entities.Report report, CancellationToken cancellicationToken)
         {
             var updateResult = await _context.Reports.ReplaceOneAsync(
                 filter: d => d.Id == report.Id, 

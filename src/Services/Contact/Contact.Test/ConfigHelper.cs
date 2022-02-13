@@ -3,11 +3,6 @@ using Contact.Application.Mappings;
 using Contact.Infrastructure.Persistence;
 using Contact.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Contact.Test
 {

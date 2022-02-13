@@ -21,7 +21,7 @@ namespace Report.API.Controllers
         private readonly IPublishEndpoint _publishEndpoint;
         private readonly IReportRepository _reportRepository;
 
-        public ReportController(IMapper mapper, ContactGrpcService contactGrpcService, IPublishEndpoint publishEndpoint, IReportRepository reportRepository)
+        public ReportController(IMapper mapper, IPublishEndpoint publishEndpoint, IReportRepository reportRepository)
         {
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
             _publishEndpoint = publishEndpoint ?? throw new ArgumentNullException(nameof(publishEndpoint));
@@ -41,13 +41,13 @@ namespace Report.API.Controllers
         public async Task<GenericResult> CreateReport(InsertReportRequestDto insertReportRequestDto, CancellationToken cancellicationToken)
         {
             var reportEntity = _mapper.Map<Entities.Report>(insertReportRequestDto);
-            reportEntity = await _reportRepository.GenerateReportAsync(report: reportEntity, cancellicationToken: cancellicationToken);
+            reportEntity = await _reportRepository.InsertReportAsync(report: reportEntity, cancellicationToken: cancellicationToken);
 
             var eventMessage = _mapper.Map<ReportBackgroundServiceEvent>(reportEntity);
             await _publishEndpoint.Publish<ReportBackgroundServiceEvent>(eventMessage);
 
             GenericResult result = new();
-            result.Data = eventMessage;
+            result.Data = _mapper.Map<InsertReportResponseDto>(reportEntity);
             result.Message = GenericMessages.Successfully_Registered;
             return result;
         }
