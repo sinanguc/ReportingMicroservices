@@ -3,10 +3,7 @@ using Common.Dto.Report.Enums;
 using Common.Dto.Report.Report;
 using Common.Helpers.Pagination;
 using Report.API.Repositories.Interfaces;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
@@ -106,6 +103,12 @@ namespace Report.Test
             Assert.Equal(reportTypeId.ToString(), result.ReportId.ToString());
         }
         #endregion
+
+        [Fact]
+        public void Dispose_Database()
+        {
+            ConfigHelper.Dispose();
+        }
 
     }
 }

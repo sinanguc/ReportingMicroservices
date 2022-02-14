@@ -1,5 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
-using MongoDB.Driver;
+﻿using MongoDB.Driver;
+using Report.API.Configuration;
 using Report.API.Data.Interfaces;
 using Report.API.Entities;
 
@@ -7,10 +7,10 @@ namespace Report.API.Data
 {
     public class ReportContext : IReportContext
     {
-        public ReportContext(IConfiguration configuration)
+        public ReportContext()
         {
-            var client = new MongoClient(configuration.GetValue<string>("DatabaseSettings:ConnectionString"));
-            var database = client.GetDatabase(configuration.GetValue<string>("DatabaseSettings:DatabaseName"));
+            var client = new MongoClient(ReportAppConfiguration.GetMongoConnectionString());
+            var database = client.GetDatabase(ReportAppConfiguration.GetMongoDatabaseName());
 
             Reports = database.GetCollection<Entities.Report>(nameof(Entities.Report));
             ReportTypePrms = database.GetCollection<ReportTypePrm>(nameof(ReportTypePrm));

@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using MassTransit;
 using Microsoft.Extensions.Configuration;
+using MongoDB.Driver;
 using Moq;
+using Report.API.Configuration;
 using Report.API.Controllers;
 using Report.API.Data;
 using Report.API.Mapper;
@@ -22,12 +24,7 @@ namespace Report.Test
 
         public static ReportContext GetContactDbContext()
         {
-
-            var config = new ConfigurationBuilder()
-                            .AddJsonFile("appsettings.json")
-                            .Build();
-
-            return new ReportContext(config);
+            return new ReportContext();
         }
 
         public static ReportRepository GetReportRepository()
@@ -39,11 +36,15 @@ namespace Report.Test
         {
             var reportRepository = GetReportRepository();
             var mapper = GetAutoMapperConfig();
-
             var _mockRabbit = new Mock<IPublishEndpoint>();
 
-
             return new ReportController(mapper, _mockRabbit.Object, reportRepository);
+        }
+
+        public static void Dispose()
+        {
+            var client = new MongoClient(ReportAppConfiguration.GetMongoConnectionString());
+            client.DropDatabase(ReportAppConfiguration.GetMongoDatabaseName());
         }
     }
 }

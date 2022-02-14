@@ -45,7 +45,6 @@ namespace Report.API.EventBusConsumer
             var reportEntity = _mapper.Map<Entities.Report>(context.Message);
 
             var report = await _reportRepository.GetReportByIdAsync(reportEntity.Id, cancellationToken);
-
             var reportTypePrm = await _reportRepository.GetReportTypeByIdAsync(report.ReportTypeId, cancellationToken);
 
             reportEntity.Status = Enums.EnumReportStatusType.Processing;

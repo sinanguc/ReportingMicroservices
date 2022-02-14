@@ -24,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\Common.Infrastructure\Common.Infrastructure.csproj" />
     <ProjectReference Include="..\Contact.Application\Contact.Application.csproj" />
   </ItemGroup>
 
