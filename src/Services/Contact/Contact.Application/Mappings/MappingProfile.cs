@@ -18,9 +18,8 @@ namespace Contact.Application.Mappings
 
             CreateMap<InsertContactRequestDto, Person>().ReverseMap();
             CreateMap<InsertContactResponseDto, Person>().ReverseMap();
-
-            CreateMap<Person, InsertContactRequestDto>().ReverseMap();
-            CreateMap<Person, InsertContactResponseDto>().ReverseMap();
+            CreateMap<UpdateContactRequestDto, Person>().ReverseMap();
+            CreateMap<UpdateContactResponseDto, Person>().ReverseMap();
 
             CreateMap<ContactInfoDto, ContactDetailVm>().ReverseMap();
             CreateMap<ContactInfoDto.WithId, ContactDetailVm>().ReverseMap();

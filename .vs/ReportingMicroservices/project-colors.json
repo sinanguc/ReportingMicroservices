@@ -1,0 +1,111 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "56ed1018-5220-4d9d-af48-cd8456f8ca3e": {
+      "ProjectGuid": "56ed1018-5220-4d9d-af48-cd8456f8ca3e",
+      "DisplayName": "Contact.API",
+      "ColorIndex": 0
+    },
+    "290a2e6f-3792-4ec8-be8d-a3321c15804c": {
+      "ProjectGuid": "290a2e6f-3792-4ec8-be8d-a3321c15804c",
+      "DisplayName": "Contact.API",
+      "ColorIndex": 1
+    },
+    "43df2411-7a91-473b-9c46-2480fcb9187d": {
+      "ProjectGuid": "43df2411-7a91-473b-9c46-2480fcb9187d",
+      "DisplayName": "Contact.Application",
+      "ColorIndex": 2
+    },
+    "7213606c-a4c0-421d-8d88-816972f354d2": {
+      "ProjectGuid": "7213606c-a4c0-421d-8d88-816972f354d2",
+      "DisplayName": "Contact.Domain",
+      "ColorIndex": 3
+    },
+    "9b2aa93e-0c93-42cc-90b6-4577cf052720": {
+      "ProjectGuid": "9b2aa93e-0c93-42cc-90b6-4577cf052720",
+      "DisplayName": "Contact.Infrastructure",
+      "ColorIndex": 4
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "fdeb1c3c-dff5-4138-a26b-fd7a203cfa85": {
+      "ProjectGuid": "fdeb1c3c-dff5-4138-a26b-fd7a203cfa85",
+      "DisplayName": "Contact.Grpc",
+      "ColorIndex": 5
+    },
+    "e2a8b17c-aad9-49fc-98ff-d997e1af594f": {
+      "ProjectGuid": "e2a8b17c-aad9-49fc-98ff-d997e1af594f",
+      "DisplayName": "Common.Dto",
+      "ColorIndex": 6
+    },
+    "dcaab7f4-2650-47f7-a9a6-c21f956e3bba": {
+      "ProjectGuid": "dcaab7f4-2650-47f7-a9a6-c21f956e3bba",
+      "DisplayName": "Common.Helpers",
+      "ColorIndex": 7
+    },
+    "f3a28f60-cd24-4c5b-9e70-da184fe6b1d7": {
+      "ProjectGuid": "f3a28f60-cd24-4c5b-9e70-da184fe6b1d7",
+      "DisplayName": "Common.Enum",
+      "ColorIndex": 8
+    },
+    "9d10857c-257b-41dc-b33c-34b7810df4fe": {
+      "ProjectGuid": "9d10857c-257b-41dc-b33c-34b7810df4fe",
+      "DisplayName": "Common.Messages",
+      "ColorIndex": 9
+    },
+    "2a7c5c74-3300-430d-87ad-50bddbc51c84": {
+      "ProjectGuid": "2a7c5c74-3300-430d-87ad-50bddbc51c84",
+      "DisplayName": "Common.Messages",
+      "ColorIndex": 10
+    },
+    "a4227b00-bb39-4f4f-ba26-ff2224838e19": {
+      "ProjectGuid": "a4227b00-bb39-4f4f-ba26-ff2224838e19",
+      "DisplayName": "Common.Middleware",
+      "ColorIndex": 11
+    },
+    "27ea8324-6a74-43a3-ae2a-47d2a0dc5951": {
+      "ProjectGuid": "27ea8324-6a74-43a3-ae2a-47d2a0dc5951",
+      "DisplayName": "Common.Filters",
+      "ColorIndex": 12
+    },
+    "b15122a3-9364-46a4-861e-80590dbdc1bf": {
+      "ProjectGuid": "b15122a3-9364-46a4-861e-80590dbdc1bf",
+      "DisplayName": "Contact.Test",
+      "ColorIndex": 13
+    },
+    "088a8089-37e5-47ec-b0f7-86afa0e462d7": {
+      "ProjectGuid": "088a8089-37e5-47ec-b0f7-86afa0e462d7",
+      "DisplayName": "Report.API",
+      "ColorIndex": 14
+    },
+    "1687e707-2622-41ae-9fbe-2060cd96f603": {
+      "ProjectGuid": "1687e707-2622-41ae-9fbe-2060cd96f603",
+      "DisplayName": "Common.Infrastructure",
+      "ColorIndex": 15
+    },
+    "9a915065-def4-450f-947b-6848fcc30cdb": {
+      "ProjectGuid": "9a915065-def4-450f-947b-6848fcc30cdb",
+      "DisplayName": "EventBus.Messages",
+      "ColorIndex": 0
+    },
+    "d9e60faa-b020-41d2-b9ca-658a0224cd58": {
+      "ProjectGuid": "d9e60faa-b020-41d2-b9ca-658a0224cd58",
+      "DisplayName": "docker-compose",
+      "ColorIndex": 1
+    },
+    "cd666afd-e5e0-4eac-8748-16adb5de50f2": {
+      "ProjectGuid": "cd666afd-e5e0-4eac-8748-16adb5de50f2",
+      "DisplayName": "Report.Test",
+      "ColorIndex": 2
+    },
+    "4f322638-903d-426f-82f7-9fc08a41ae58": {
+      "ProjectGuid": "4f322638-903d-426f-82f7-9fc08a41ae58",
+      "DisplayName": "Common.Logging",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}

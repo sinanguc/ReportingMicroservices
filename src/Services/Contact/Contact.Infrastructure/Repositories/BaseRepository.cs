@@ -12,7 +12,8 @@ using System.Threading.Tasks;
 
 namespace Contact.Infrastructure.Repositories
 {
-    public class BaseRepository<TEntity> : IAsyncRepository<TEntity> where TEntity : class, IEntity, new()
+    public class BaseRepository<TEntity> : IAsyncRepository<TEntity>
+        where TEntity : class, IEntity, new()
     {
         protected readonly ContactContext _dbContext;
 
@@ -71,12 +72,26 @@ namespace Contact.Infrastructure.Repositories
 
         public virtual async Task<TEntity> GetByIdAsync(int id, CancellationToken cancellationToken)
         {
-            return await _dbContext.Set<TEntity>().FindAsync(id, cancellationToken);
+            return await _dbContext.Set<TEntity>().FindAsync(id, cancellationToken).ConfigureAwait(false);
         }
 
         public virtual async Task<TEntity> GetByIdAsync(Guid id, CancellationToken cancellationToken)
         {
-            return await _dbContext.Set<TEntity>().FindAsync(id, cancellationToken);
+            return await _dbContext.Set<TEntity>().FindAsync(id, cancellationToken).ConfigureAwait(false);
+        }
+
+        public virtual async Task<TEntity> FirstOrDefaultAsync(CancellationToken cancellationToken, Expression<Func<TEntity, bool>> filter = null)
+        {
+            return filter == null ? 
+                await _dbContext.Set<TEntity>().FirstOrDefaultAsync(cancellationToken: cancellationToken).ConfigureAwait(false) 
+                : await _dbContext.Set<TEntity>().FirstOrDefaultAsync(filter, cancellationToken).ConfigureAwait(false);
+        }
+
+        public virtual async Task<TEntity> LastOrDefaultAsync(CancellationToken cancellationToken, Expression<Func<TEntity, bool>> filter = null)
+        {
+            return filter == null ?
+                await _dbContext.Set<TEntity>().LastOrDefaultAsync(cancellationToken: cancellationToken).ConfigureAwait(false)
+                : await _dbContext.Set<TEntity>().LastOrDefaultAsync(filter, cancellationToken).ConfigureAwait(false);
         }
 
         public async Task<TEntity> InsertAsync(TEntity entity, CancellationToken cancellationToken)
@@ -86,16 +101,48 @@ namespace Contact.Infrastructure.Repositories
             return entity;
         }
 
-        public async Task UpdateAsync(TEntity entity, CancellationToken cancellationToken)
+        public async Task<TEntity> UpdateAsync(TEntity entity, CancellationToken cancellationToken)
         {
+            if (entity == null)
+                throw new ArgumentNullException(nameof(entity));
+
             _dbContext.Entry(entity).State = EntityState.Modified;
             await _dbContext.SaveChangesAsync(cancellationToken);
+            return entity;
         }
 
-        public async Task DeleteAsync(TEntity entity, CancellationToken cancellationToken)
+        public async Task<bool> DeleteAsync(TEntity entity, CancellationToken cancellationToken)
         {
             _dbContext.Set<TEntity>().Remove(entity);
-            await _dbContext.SaveChangesAsync(cancellationToken);
+            return await _dbContext.SaveChangesAsync(cancellationToken) > 0;
         }
+
+        public void DetachAll()
+        {
+            _dbContext.ChangeTracker.Clear();
+        }
+
+        #region Disposable
+        private bool _disposed;
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!_disposed && disposing)
+                _dbContext.Dispose();
+
+            _disposed = true;
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        ~BaseRepository()
+        {
+            Dispose(true);
+        }
+        #endregion
+
     }
 }

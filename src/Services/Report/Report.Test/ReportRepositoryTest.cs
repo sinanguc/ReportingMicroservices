@@ -104,11 +104,5 @@ namespace Report.Test
         }
         #endregion
 
-        [Fact]
-        public void Dispose_Database()
-        {
-            ConfigHelper.Dispose();
-        }
-
     }
 }

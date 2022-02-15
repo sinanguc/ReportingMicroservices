@@ -45,19 +45,6 @@ namespace Contact.API.Controllers
             return Ok(result);
         }
 
-        [HttpGet("GetReportt")]
-        [ProducesResponseType(typeof(GenericResult), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<GenericResult>> GetReportt()
-        {
-            var query = new GetContactReportByLocationForExportFileQuery(String.Empty);
-            var contacts = await _mediator.Send(query);
-
-            GenericResult result = new GenericResult();
-            result.Data = contacts;
-            result.Message = GenericMessages.Successfully_Listed;
-            return Ok(result);
-        }
-
         [HttpPost("AddContact")]
         [ProducesResponseType(typeof(GenericResult), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<GenericResult>> AddContact([FromBody] InsertContactRequestDto request)
@@ -72,9 +59,9 @@ namespace Contact.API.Controllers
             return Ok(result);
         }
 
-        [HttpPut("EditContact")]
+        [HttpPut("UpdateContact")]
         [ProducesResponseType(typeof(GenericResult), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<GenericResult>> EditContact([FromBody] UpdateContactRequestDto request)
+        public async Task<ActionResult<GenericResult>> UpdateContact([FromBody] UpdateContactRequestDto request)
         {
             var command = new UpdateContactCommand(request);
             var person = await _mediator.Send(command);
@@ -123,7 +110,7 @@ namespace Contact.API.Controllers
 
             GenericResult result = new GenericResult();
             result.Data = personConcactInfo;
-            result.Message = GenericMessages.Successfully_Deleted_Record;
+            result.Message = GenericMessages.Successfully_Registered;
 
             return Ok(result);
         }
@@ -137,7 +124,7 @@ namespace Contact.API.Controllers
 
             GenericResult result = new GenericResult();
             result.Data = personConcactInfo;
-            result.Message = GenericMessages.Successfully_Deleted_Record;
+            result.Message = GenericMessages.Successfully_Registered;
 
             return Ok(result);
         }

@@ -22,8 +22,12 @@ namespace Contact.Application.Contracts.Persistence
                                        bool disableTracking = true);
         Task<TEntity> GetByIdAsync(int id, CancellationToken cancellationToken);
         Task<TEntity> GetByIdAsync(Guid id, CancellationToken cancellationToken);
+        Task<TEntity> FirstOrDefaultAsync(CancellationToken cancellationToken, Expression<Func<TEntity, bool>> filter = null);
+        Task<TEntity> LastOrDefaultAsync(CancellationToken cancellationToken, Expression<Func<TEntity, bool>> filter = null);
         Task<TEntity> InsertAsync(TEntity entity, CancellationToken cancellationToken);
-        Task UpdateAsync(TEntity entity, CancellationToken cancellationToken);
-        Task DeleteAsync(TEntity entity, CancellationToken cancellationToken);
+        Task<TEntity> UpdateAsync(TEntity entity, CancellationToken cancellationToken);
+        Task<bool> DeleteAsync(TEntity entity, CancellationToken cancellationToken);
+
+        void DetachAll();
     }
 }
