@@ -1,5 +1,5 @@
 # Reporting-Microservices-Example
-Shopping Microservices Example in .Net 5
+Reporting-Microservices-Example in .Net 5
 
 **Docker:**
 ```
