@@ -22,12 +22,6 @@ namespace Contact.API
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                }).ConfigureAppConfiguration(configurationBuilder =>
-                {
-                    configurationBuilder.Sources.Remove(
-                    configurationBuilder.Sources.First(source =>
-                    source.GetType() == typeof(EnvironmentVariablesConfigurationSource))); //remove the default one first
-                    configurationBuilder.AddEnvironmentVariables();
                 });
     }
 }

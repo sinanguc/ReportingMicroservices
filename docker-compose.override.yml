@@ -73,10 +73,10 @@ services:
   contact.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - "DatabaseSettings:ConnectionString=Server=contactdb;Port=5433;Database=ContactDb;User Id=admin;Password=admin1234;"
+      - "DatabaseSettings:ConnectionString=Server=contactdb;Port=5434;Database=ContactDb;User Id=admin;Password=admin1234;"
       - "ElasticConfiguration:Uri=http://elasticsearch:9200"
     depends_on:
-      - reportdb
+      - contactdb
       - rabbitmq
     ports:
       - "8001:80"
@@ -84,10 +84,10 @@ services:
   contact.grpc:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - "DatabaseSettings:ConnectionString=Server=contactdb;Port=5433;Database=ContactDb;User Id=admin;Password=admin1234;"
+      - "DatabaseSettings:ConnectionString=Server=contactdb;Port=5434;Database=ContactDb;User Id=admin;Password=admin1234;"
       - "ElasticConfiguration:Uri=http://elasticsearch:9200"
     depends_on:
-      - reportdb
+      - contactdb
       - rabbitmq
     ports:
       - "8002:80"
@@ -100,7 +100,7 @@ services:
       - "GrpcSettings:ContactUrl=http://contact.api"
       - "EventBusSettings:HostAddress=amqp://guest:guest@rabbitmq:5672"
       - "ElasticConfiguration:Uri=http://elasticsearch:9200"
-      - "FileServerUrl=https://localhost:44307/Assets/Files"
+      - "FileServerUrl=https://report.api/Assets/Files"
     depends_on:
       - reportdb
       - rabbitmq

@@ -26,6 +26,7 @@ namespace Common.Infrastructure.Configuration
                     _configurationBuilder = new ConfigurationBuilder()
                         .SetBasePath(AppContext.BaseDirectory)
                         .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                        .AddEnvironmentVariables()
                         .Build();
                 }
                 return _configurationBuilder;

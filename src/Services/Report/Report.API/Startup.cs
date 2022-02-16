@@ -33,7 +33,7 @@ namespace Report.API
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; set; }
+        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -93,13 +93,6 @@ namespace Report.API
                 app.UseDeveloperExceptionPage();
 
             }
-
-            var builder = new ConfigurationBuilder()
-                        .SetBasePath(env.ContentRootPath)
-                        .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                        .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
-                        .AddEnvironmentVariables();
-            Configuration = builder.Build();
 
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Report.API v1"));

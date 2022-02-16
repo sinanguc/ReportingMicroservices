@@ -12,7 +12,9 @@ namespace Contact.Infrastructure
     {
         public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<ContactContext>(options => options.UseNpgsql(ContactAppConfiguration.GetPostgreConnectionString()));
+            services.AddDbContext<ContactContext>(options => 
+                options.UseNpgsql(ContactAppConfiguration.GetPostgreConnectionString(), 
+                    option => option.EnableRetryOnFailure()));
 
             services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
             services.AddScoped<IContactRepository, ContactRepository>();

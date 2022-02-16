@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MassTransit;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using MongoDB.Driver;
 using Moq;
 using Report.API.Configuration;
@@ -37,8 +38,9 @@ namespace Report.Test
             var reportRepository = GetReportRepository();
             var mapper = GetAutoMapperConfig();
             var _mockRabbit = new Mock<IPublishEndpoint>();
+            var _mockLogger = new Mock<ILogger<ReportController>>();
 
-            return new ReportController(mapper, _mockRabbit.Object, reportRepository);
+            return new ReportController(_mockLogger.Object, mapper, _mockRabbit.Object, reportRepository);
         }
 
         public static void Dispose()

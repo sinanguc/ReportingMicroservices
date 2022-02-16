@@ -31,3 +31,4 @@
 /src/BuildingBlocks/Common.Middleware/obj
 /src/BuildingBlocks/EventBus.Messages/obj
 /src/BuildingBlocks/EventBus.Messages/bin
+/bin/Debug

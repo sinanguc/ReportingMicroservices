@@ -21,10 +21,6 @@ namespace Report.API
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                })
-                .ConfigureAppConfiguration(configurationBuilder => 
-                {
-                    configurationBuilder.AddEnvironmentVariables(); 
                 });
     }
 }
