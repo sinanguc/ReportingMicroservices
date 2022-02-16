@@ -1,4 +1,5 @@
 ﻿using Contact.Application.Contracts.Persistence;
+using Contact.Infrastructure.Configuration;
 using Contact.Infrastructure.Persistence;
 using Contact.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -11,7 +12,7 @@ namespace Contact.Infrastructure
     {
         public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<ContactContext>(options => options.UseNpgsql(configuration["DatabaseSettings:ConnectionString"]));
+            services.AddDbContext<ContactContext>(options => options.UseNpgsql(ContactAppConfiguration.GetPostgreConnectionString()));
 
             services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
             services.AddScoped<IContactRepository, ContactRepository>();

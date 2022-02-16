@@ -1,6 +1,7 @@
 using Common.Middleware.ExceptionHandler;
 using Contact.Application;
 using Contact.Infrastructure;
+using Contact.Infrastructure.Configuration;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -33,7 +34,7 @@ namespace Contact.API
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Contact.API", Version = "v1" });
             });
 
-            services.AddHealthChecks().AddNpgSql(Configuration["DatabaseSettings:ConnectionString"]);
+            services.AddHealthChecks().AddNpgSql(ContactAppConfiguration.GetPostgreConnectionString());
 
         }
 
@@ -43,9 +44,11 @@ namespace Contact.API
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Contact.API v1"));
+
             }
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Contact.API v1"));
 
             app.UseRouting();
 

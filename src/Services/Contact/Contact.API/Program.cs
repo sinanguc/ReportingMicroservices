@@ -1,12 +1,11 @@
+using Common.Logging;
 using Contact.Infrastructure.Extensions;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration.EnvironmentVariables;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
+using Serilog;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Contact.API
 {
@@ -19,9 +18,16 @@ namespace Contact.API
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+                .UseSerilog(SeriLogger.Configure)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                }).ConfigureAppConfiguration(configurationBuilder =>
+                {
+                    configurationBuilder.Sources.Remove(
+                    configurationBuilder.Sources.First(source =>
+                    source.GetType() == typeof(EnvironmentVariablesConfigurationSource))); //remove the default one first
+                    configurationBuilder.AddEnvironmentVariables();
                 });
     }
 }

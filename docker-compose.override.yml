@@ -49,35 +49,60 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - portainer_data:/data
 
-  #contact.api:
-  #  environment:
-  #    - ASPNETCORE_ENVIRONMENT=Development
-  #    - "DatabaseSettings:ConnectionString=Server=contactdb;Port=5433;Database=ContactDb;User Id=admin;Password=admin1234;"
-  #  depends_on:
-  #    - contactdb
-  #  ports:
-  #    - "8001:80"
+  elasticsearch:
+    container_name: elasticsearch
+    environment:
+        - xpack.monitoring.enabled=true
+        - xpack.watcher.enabled=false
+        - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+        - discovery.type=single-node
+    ports:
+        - "9200:9200"
+    volumes:
+        - elasticsearch-data:/usr/share/elasticsearch/data  
 
-  #report.api:
-  #  environment:
-  #    - ASPNETCORE_ENVIRONMENT=Development
-  #    - ASPNETCORE_URLS=https://+:443;http://+:80
-  #    - "DatabaseSettings:ConnectionString=mongodb://reportdb:27018"
-  #  depends_on:
-  #    - reportdb
-  #    - rabbitmq
-  #  ports:
-  #    - "8002:80"
-  #    - "8003:443"
-  #  volumes:
-  #    - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+  kibana:
+    container_name: kibana
+    environment:        
+        - ELASTICSEARCH_URL=http://elasticsearch:9200
+    depends_on:
+        - elasticsearch
+    ports:
+        - "5601:5601" 
 
-  #contact.grpc:
-  #  environment:
-  #    - ASPNETCORE_ENVIRONMENT=Development
-  #    - ASPNETCORE_URLS=https://+:443;http://+:80
-  #  ports:
-  #    - "80"
-  #    - "443"
-  #  volumes:
-  #    - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+  contact.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "DatabaseSettings:ConnectionString=Server=contactdb;Port=5433;Database=ContactDb;User Id=admin;Password=admin1234;"
+      - "ElasticConfiguration:Uri=http://elasticsearch:9200"
+    depends_on:
+      - reportdb
+      - rabbitmq
+    ports:
+      - "8001:80"
+
+  contact.grpc:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "DatabaseSettings:ConnectionString=Server=contactdb;Port=5433;Database=ContactDb;User Id=admin;Password=admin1234;"
+      - "ElasticConfiguration:Uri=http://elasticsearch:9200"
+    depends_on:
+      - reportdb
+      - rabbitmq
+    ports:
+      - "8002:80"
+
+  report.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "DatabaseSettings:ConnectionString=mongodb://reportdb:27018"
+      - "DatabaseSettings:DatabaseName=ReportDb"
+      - "GrpcSettings:ContactUrl=http://contact.api"
+      - "EventBusSettings:HostAddress=amqp://guest:guest@rabbitmq:5672"
+      - "ElasticConfiguration:Uri=http://elasticsearch:9200"
+      - "FileServerUrl=https://localhost:44307/Assets/Files"
+    depends_on:
+      - reportdb
+      - rabbitmq
+    ports:
+      - "8003:80"

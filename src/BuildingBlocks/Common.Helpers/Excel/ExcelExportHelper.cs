@@ -144,7 +144,7 @@ namespace Common.Helpers.Excel
         {
             using (ExcelPackage package = new ExcelPackage(new MemoryStream(bytes)))
             {
-                savedFileName = $"{fileName}.xlsx";
+                savedFileName = fileName = $"{fileName}.xlsx";
                 package.SaveAs(new FileInfo($"{path}\\{fileName}"));
                 package.Dispose();
             }

@@ -1,5 +1,6 @@
 using Common.Infrastructure.BackgroundService;
 using Common.Infrastructure.BackgroundService.Interfaces;
+using Common.Middleware.ExceptionHandler;
 using Contact.Grpc.Protos;
 using EventBus.Messages.Common;
 using HealthChecks.UI.Client;
@@ -32,7 +33,7 @@ namespace Report.API
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        public IConfiguration Configuration { get; set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -90,9 +91,18 @@ namespace Report.API
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Report.API v1"));
+
             }
+
+            var builder = new ConfigurationBuilder()
+                        .SetBasePath(env.ContentRootPath)
+                        .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                        .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+                        .AddEnvironmentVariables();
+            Configuration = builder.Build();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Report.API v1"));
 
             app.UseHttpsRedirection();
 
@@ -100,10 +110,12 @@ namespace Report.API
 
             app.UseAuthorization();
 
+            app.UseCustomExceptionHandler();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                endpoints.MapHealthChecks("hc", new HealthCheckOptions()
+                endpoints.MapHealthChecks("/hc", new HealthCheckOptions()
                 {
                     Predicate = _ => true,
                     ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse

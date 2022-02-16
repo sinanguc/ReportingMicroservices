@@ -1,9 +1,7 @@
 ﻿using Common.Dto.Shared;
 using Common.Helpers.ErrorHandling.CustomErrors;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Net;
 using System.Text.Json;
@@ -36,7 +34,7 @@ namespace Common.Middleware.ExceptionHandler
         {
             GenericResult result = new GenericResult();
             result.Message = ex.Message;
-            result.StatusCode = HttpStatusCode.InternalServerError.GetHashCode(); // eğer hata tipleri ile uyuşmazsa
+            result.StatusCode = HttpStatusCode.InternalServerError.GetHashCode(); // if the error types dont match
 
             switch (ex)
             {

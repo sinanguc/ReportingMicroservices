@@ -36,5 +36,10 @@ namespace Common.Infrastructure.Configuration
         {
             return ConfigurationRoot["Version"];
         }
+
+        public string GetElastic()
+        {
+            return ConfigurationRoot["ElasticConfiguration:Uri"];
+        }
     }
 }

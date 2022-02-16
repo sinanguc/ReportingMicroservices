@@ -31,7 +31,9 @@
     <ProjectReference Include="..\..\..\BuildingBlocks\Common.Dto\Common.Dto.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\Common.Helpers\Common.Helpers.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\Common.Infrastructure\Common.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\Common.Logging\Common.Logging.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\Common.Messages\Common.Messages.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\Common.Middleware\Common.Middleware.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\EventBus.Messages\EventBus.Messages.csproj" />
   </ItemGroup>
 

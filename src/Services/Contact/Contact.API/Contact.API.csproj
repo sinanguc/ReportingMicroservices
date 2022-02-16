@@ -29,6 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\Common.Logging\Common.Logging.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\Common.Messages\Common.Messages.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\Common.Middleware\Common.Middleware.csproj" />
     <ProjectReference Include="..\Contact.Application\Contact.Application.csproj" />

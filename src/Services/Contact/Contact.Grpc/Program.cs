@@ -1,10 +1,10 @@
+using Common.Logging;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration.EnvironmentVariables;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.IO;
+using Serilog;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Contact.Grpc
 {
@@ -19,9 +19,16 @@ namespace Contact.Grpc
         // For instructions on how to configure Kestrel and gRPC clients on macOS, visit https://go.microsoft.com/fwlink/?linkid=2099682
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+                .UseSerilog(SeriLogger.Configure)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                }).ConfigureAppConfiguration(configurationBuilder =>
+                {
+                    configurationBuilder.Sources.Remove(
+                    configurationBuilder.Sources.First(source =>
+                    source.GetType() == typeof(EnvironmentVariablesConfigurationSource))); //remove the default one first
+                    configurationBuilder.AddEnvironmentVariables();
                 });
     }
 }

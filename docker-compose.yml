@@ -16,26 +16,33 @@ services:
   portainer:
     image: portainer/portainer-ce
 
-  #contact.api:
-  #  image: ${DOCKER_REGISTRY-}contactapi
-  #  build:
-  #    context: .
-  #    dockerfile: src/Services/Contact/Contact.API/Dockerfile
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.9.2
 
-  #report.api:
-  #  image: ${DOCKER_REGISTRY-}reportapi
-  #  build:
-  #    context: .
-  #    dockerfile: src/Services/Report/Report.API/Dockerfile
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.9.2
 
-  #contact.grpc:
-  #  image: ${DOCKER_REGISTRY-}contactgrpc
-  #  build:
-  #    context: .
-  #    dockerfile: src/Services/Contact/Contact.Grpc/Dockerfile
+  contact.api:
+    image: ${DOCKER_REGISTRY-}contactapi
+    build:
+      context: .
+      dockerfile: src/Services/Contact/Contact.API/Dockerfile
+
+  report.api:
+    image: ${DOCKER_REGISTRY-}reportapi
+    build:
+      context: .
+      dockerfile: src/Services/Report/Report.API/Dockerfile
+
+  contact.grpc:
+    image: ${DOCKER_REGISTRY-}contactgrpc
+    build:
+      context: .
+      dockerfile: src/Services/Contact/Contact.Grpc/Dockerfile
 
 volumes:
   mongo_data:
   portainer_data:
   postgres_data:
   pgadmin_data:
+  elasticsearch-data:

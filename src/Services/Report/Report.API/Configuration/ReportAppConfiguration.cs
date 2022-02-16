@@ -34,5 +34,10 @@ namespace Report.API.Configuration
             return BaseConfig.ConfigurationRoot["QueueCapacity"];
         }
 
+        public static string GetFileServerUrl()
+        {
+            return BaseConfig.ConfigurationRoot["FileServerUrl"];
+        }
+
     }
 }
